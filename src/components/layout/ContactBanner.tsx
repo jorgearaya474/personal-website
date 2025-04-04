@@ -3,7 +3,7 @@ import CtaButton from "../ui/CtaButton";
 const ContactBanner = () => {
   return (
     <div className="container pb-8 lg:pb-[8rem]">
-      <div className="flex flex-col gap-8 bg-zinc-800/60 p-8 md:p-16 rounded-xl relative">
+      <div className="flex flex-col gap-8 bg-zinc-800/60 p-8 md:p-16 rounded-xl relative overflow-hidden">
         <div className="max-w-3xl">
           <h2 className="font-primary text-3xl lg:text-5xl block font-black text-white text-left">
             Get in Touch
