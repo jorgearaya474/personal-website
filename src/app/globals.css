@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --foreground-rgb: 255, 255, 255;
+}
+
+body {
+    color: rgb(var(--foreground-rgb));
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+.gradient-bg {
+    background-image:
+        radial-gradient(
+            at 33% 5%,
+            rgb(0 91 79 / 50%) 0,
+            rgba(24, 83, 247, 0) 50%
+        ),
+        radial-gradient(
+            at 66% 21%,
+            rgb(14 152 140 / 32%) 0,
+            rgba(62, 94, 239, 0) 50%
+        );
+}
+.gradient-bg:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(rgba(255, 251, 235, 0.01) 0.1em, transparent 0),
+        linear-gradient(90deg, rgba(255, 251, 235, 0.01) 0.1em, transparent 0);
+    background-size: 2.5em 2.5em;
+}

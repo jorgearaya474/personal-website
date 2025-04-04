@@ -1,0 +1,167 @@
+---
+title: "Create Your Own Chromium Browser Extension from Scratch"
+date: "28-02-2025"
+description: "Learn how to build your own Chromium browser extension from scratch. This step-by-step guide walks you through creating a simple tool to copy image names with just a right-click. Perfect for web developers looking to solve real-life problems through custom extensions."
+tags: "JavaScript"
+---
+
+Browser extensions are powerful tools that allow users to customize and enhance their browsing experience, or in my case, as a developer it allows me to create solutions for my everyday problems.
+
+If you’re a web developer interested in building your own extension for Chromium-based browsers like Google Chrome, Microsoft Edge, or Brave, this guide will walk you through the basics by creating an extension to copy the name of the images 🏞️.
+
+## Understanding the Basics
+
+A Chromium extension is essentially a small web application made up of HTML, CSS, and JavaScript. It interacts with the browser through the Extensions API, allowing you to modify pages, add functionalities, and interact with the browser UI.
+
+### Key Components of a Chromium Extension
+
+- Manifest File (manifest.json) - The configuration file that defines the extension’s metadata, permissions, and scripts.
+
+- Background Script - Runs in the background and manages events.
+
+- Content Scripts - Injected into web pages to modify content.
+
+- Popup UI - The front-end interface shown when users interact with the extension.
+
+- Permissions - Defines what the extension can access, such as tabs, storage, or bookmarks.
+
+## Setting Up the Extension
+
+### Step 1: Create the Project Directory
+
+Create a new folder and name it something like `image-name-copy` or any other name you like.
+
+### Step 2: Define the Manifest File
+
+Inside your project folder, create a `manifest.json` file with the following content:
+
+```json
+{
+  "manifest_version": 3,
+  "name": "Image Name Copy",
+  "version": "1.0",
+  "description": "Easily copy image filenames through a right-click context menu. Automatically saves names to clipboard with confirmation notification.",
+  "permissions": [
+    "contextMenus",
+    "scripting",
+    "notifications",
+    "clipboardWrite"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  }
+}
+```
+
+Here are some important notes and definitions for the code above:
+
+- permissions: This is very important since it will define which browser permissions our extension will require.
+- background: This is the main script where we'll handle events and execute our logic.
+
+### Step 3: Implement the Background Script
+
+Create a `background.js` file inside your project folder.
+
+And first let create the context menu, this will add a menu item on the browser when you right-click, add this code on the `background.js` file
+
+```javascript
+// Create context menu
+chrome.contextMenus.create({
+  id: "copyImageName",
+  title: "Copy Image Name",
+  contexts: ["image"],
+});
+```
+
+Now, let's define what happens when the user clicks this menu item. We'll use a "click" listener to trigger the functionality we want when this menu item is clicked.
+
+A script is injected into the page using `chrome.scripting.executeScript()` this method executes the code in the context of the web page where the user clicks the menu item. And this calls the function `copyToClipboard` that contains the browser function `navigator.clipboard.writeText()` to copy the filename.
+
+In this case, we are setting a notification as feedback. This way we can visually see when the name of the image is being copied. For the notifications I've created a separate function called `showNotification`.
+
+Add the following code right bellow the context menu code.
+
+```javascript
+// Listen for click in context menu
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  if (info.menuItemId !== "copyImageName" || !info.srcUrl) return;
+
+  const imageName = extractImageName(info.srcUrl);
+
+  chrome.scripting
+    .executeScript({
+      target: { tabId: tab.id },
+      function: copyToClipboard,
+      args: [imageName],
+    })
+    .then(([result]) => {
+      if (result?.result?.success) {
+        showNotification(`Copied: ${imageName}`, "success");
+      } else {
+        throw new Error(result?.result?.error || "Copy failed.");
+      }
+    })
+    .catch((error) => {
+      showNotification(`Error: ${error.message}`, "error");
+    });
+});
+
+// Copy to clipboard within the page
+async function copyToClipboard(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return { success: true };
+  } catch {
+    return {
+      success: false,
+      error: "Failed to copy. Click on the page first.",
+    };
+  }
+}
+
+// Get the image name from the URL
+function extractImageName(url) {
+  return url.split("/").pop().split("?")[0] || "untitled";
+}
+
+// Show notifications
+function showNotification(message, type = "success") {
+  chrome.notifications.create({
+    type: "basic",
+    iconUrl: type === "success" ? "images/success.png" : "images/error.png",
+    title: type === "success" ? "Success" : "Error",
+    message,
+  });
+}
+```
+
+### Step 4: Adding your images/icons
+
+Icons are required for browser extensions, you can create a folder named `images` and add all the files in there. These images will be called in the `manifest.json` file on the "icons" section.
+
+Step 5: Load the Extension in Chromium
+
+- Open chrome://extensions/ in your browser.
+
+- Enable "Developer mode" (toggle in the top right corner).
+
+- Click "Load unpacked" and select your project folder.
+
+- Your extension should now appear in the list!
+
+Now if you right-click on an image on any page, it will copy the name of the file. Please note that this won't work on background images, since it requires a different process.
+
+---
+
+## Conclusion
+
+Creating a Chromium extension is a great way to enhance browser functionality and customize the web experience. By following this guide, you now have the foundation to build and expand your own extensions. Happy coding!
+
+Here you can find a [repository](https://github.com/jorgearaya474/image-name-copy) with the example used on this post.
+
+If you have any ideas, questions, or improvements, feel free to leave a comment bellow. Happy coding! 🚀

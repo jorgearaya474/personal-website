@@ -1,0 +1,89 @@
+---
+title: "First Look at Incremental Static Regeneration (ISR) in Next.js"
+date: "15-11-2024"
+description: "Incremental Static Regeneration (ISR) in Next.js combines the speed of static pages with the flexibility of dynamic content. This post explores how ISR works, why it's useful, and how to implement it in a simple blog."
+tags: "Nextjs, React"
+---
+
+Static site generation (SSG) is one of the core features that makes Next.js powerful. However, traditional static sites often face the challenge of keeping content up-to-date without redeploying the entire application.
+
+In this post, you'll learn:
+
+1. What ISR is and why it's useful.
+2. How to implement ISR in a simple blog example.
+3. Common use cases and best practices.
+
+## What is Incremental Static Regeneration (ISR)?
+
+ISR is a feature that allows you to update static content at runtime, combining the speed of static pages with the flexibility of dynamic content.
+
+With ISR your application will have the ability to revalidate static pages after a specified time interval. In simpler words, this means you can serve pre-rendered content while keeping it updated without rebuilding your application.
+
+With ISR, you can:
+
+- Pre-render pages at build time.
+- Set an interval (e.g., every 10 seconds) to regenerate the static page in the background.
+- Serve updated content on subsequent requests.
+
+## How It Works
+
+Incremental Static Regeneration (ISR) combines the benefits of static generation with the freshness of dynamic content.
+
+When a user makes the first request to a page, Next.js generates it statically and caches the result. This initial generation happens on-demand rather than at build time, meaning pages are created only when they're actually needed.
+Here's how it works step by step:
+
+1. First user visits the page → Next.js generates and caches it
+2. Other users visit → They see the cached version
+3. After revalidation time expires → Next visit triggers background update
+4. New version replaces the old one in cache
+
+After a specified time period, the next user request triggers a background regeneration, seamlessly updating the cached content.
+
+## How to setup ISR?
+
+Let’s build a simple blog that updates dynamically using ISR. This example uses the App Router.
+
+```react
+// app/articles/page.js
+export const revalidate = 10 // Set the revalidation interval to 10 seconds
+
+async function getPosts() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5")
+  return res.json()
+}
+
+export default async function Articles() {
+  const posts = await getPosts()
+
+  return (
+    <div>
+      <h1>Latest Articles</h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+```
+
+In the above example the page will be regenerated every 10 seconds.
+
+## When to Use ISR?
+
+ISR is perfect for:
+
+- Content that updates periodically but doesn’t need real-time updates.
+- Product pages that need periodic updates (e.g., stock availability).
+- Pages with dynamic content that changes occasionally.
+
+## Conclusion
+
+ISR in Next.js bridges the gap between static and dynamic content, offering a flexible and powerful way to build more sophisticated web applications. Whether you’re creating a blog, an online store, or a dashboard, ISR is a very cool feature that is worth exploring.
+
+What are your thoughts on ISR? Have you used it in your projects? Please share your experience in the comments!

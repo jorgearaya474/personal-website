@@ -1,0 +1,74 @@
+---
+title: "How to set up a simple WordPress local environment with Docker"
+date: "15-11-2024"
+description: "Learn how to set up a local WordPress development environment using Docker. Say goodbye to traditional setups like XAMPP or WAMP and discover how containers can streamline your workflow."
+tags: "WordPress, PHP, Docker"
+---
+
+Docker is one of those amazing tools that everyone wants to get their hands on. In the last few years, it has become very popular, and if you are bored of the same local environment setups with xampp or wamp, this is a great option to learn about [containers](https://www.docker.com/resources/what-container/) and improve your development environment.
+
+## First, you need to install Docker
+
+To install docker desktop you can download it from the [docker page](https://www.docker.com/products/docker-desktop/). It's available for Windows, Linux, and Mac, check out the [official page](https://www.docker.com/products/docker-desktop/), select your system, and follow the installation steps, and then you'll be ready to go!
+
+## Create the project directory and files
+
+You need to create a directory where your WordPress installation is going to be, in this directory you will have the necessary folders to place your plugins and themes.
+
+Create a folder, I'm going to call it `wp-local-docker`, inside this folder you need to create a docker compose file called `docker-compose.yml`, this is the configuration file for our docker setup. In this file, we're going to add all the necessary services to have WordPress up and running.
+
+In the `docker-compose.yml` file you need to specify the version and the services, the first service will be the database; in this service, we define the database image that docker is going to use, the volume, the ports where the service will be running, and the MySql environment variables.
+
+The next service is going to be the WordPress service, where we need to define the image, the WordPress environment variables, and the volumes where the WordPress plugins and themes will be allocated, the entire file should look like this:
+
+```yml
+version: "3.9"
+services:
+  db:
+    image: mysql:latest
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    ports:
+      - "3306:3306"
+    networks:
+      - localwp
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    volumes:
+      - wpfiles:/var/www/html
+      - ./wordpress/themes:/var/www/html/wp-content/themes
+      - ./wordpress/plugins:/var/www/html/wp-content/plugins
+    ports:
+      - "8000:80"
+    restart: on-failure
+    networks:
+      - localwp
+
+volumes:
+  db_data:
+  wpfiles:
+```
+
+\*Make sure to use the correct identation to .yml files.
+
+As you may see, you will need a directory to allocate all your themes and plugins, for this create a folder called `wordpress` and inside this folder create another two, one for `plugins` and one for `themes`.
+
+At this point, the only thing left to do is open docker, and once it's running on your system, open the terminal and go to your project folder, in my case `wp-local-docker/` and run `docker-compose up`, with this docker is going to create the containers and pull all the necessary thing to get the services (databse and wordpress) running. You can run `docker-compose down` to stop the containers.
+
+And that's it! 🎉 You've now set up a Dockerized WordPress development environment. Enjoy the smooth and flexible experience of working with containers! Happy coding and have fun! 🚀
+
+Here is a [link](https://github.com/jorgearaya474/wp-local-docker) to a github repository with a basic example.
