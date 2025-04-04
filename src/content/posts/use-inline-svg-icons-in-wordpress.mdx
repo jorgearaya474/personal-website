@@ -1,0 +1,190 @@
+---
+title: "How to Use Inline SVG Icons in WordPress Without Extra Plugins"
+date: "2025-04-04"
+description: "Learn how to render inline SVG icons in WordPress using a custom function. Gain full control over styling, performance, and accessibility without the need for extra plugins."
+tags: "WordPress, PHP"
+---
+
+SVG icons are lightweight, scalable, and easy to style with CSS. But by default, many WordPress themes and plugins load SVGs as `<img>` tags or background images — which limits styling and accessibility.
+
+In this post, I'll show you how to render SVG icons with a custom function into your WordPress templates, allowing full control over their appearance and behavior.
+
+## ✅ Why Inline SVG?
+
+Rendering SVG as inline code gives you:
+
+- **Full CSS control** (fill, stroke, hover effects)
+
+- **Better accessibility** options
+
+- **No extra HTTP requests**
+
+- **Animation capabilities**
+
+## 🧰 The Function: `theme_get_svg()`
+
+Let’s walk through this function step by step so you understand how each part works.
+
+```php
+function theme_get_svg($icon, $url = null, $args = [])
+{
+    $defaults = [
+        "class" => "",
+        "width" => "24",
+        "height" => "24",
+    ];
+
+    $args = wp_parse_args($args, $defaults);
+
+    // Determine the icon path
+    if (!empty($url)) {
+        // Fetch the SVG from an external URL (WordPress Media Library or external source)
+        $response = wp_remote_get($url);
+
+        if (
+            is_wp_error($response) ||
+            wp_remote_retrieve_response_code($response) !== 200
+        ) {
+            return "";
+        }
+
+        $svg = wp_remote_retrieve_body($response);
+    } else {
+        // Fetch the SVG from theme assets
+        $icon_path =
+            get_template_directory() . "/assets/icons/" . $icon . ".svg";
+
+        if (!file_exists($icon_path)) {
+            return "";
+        }
+
+        $svg = file_get_contents($icon_path);
+    }
+
+    $svg = preg_replace(
+        "/<svg/",
+        sprintf(
+            '<svg class="%s" width="%s" height="%s"',
+            esc_attr($args["class"]),
+            esc_attr($args["width"]),
+            esc_attr($args["height"])
+        ),
+        $svg,
+        1
+    );
+
+    return $svg;
+}
+```
+
+### 1. Default Arguments and Customization Options
+
+```php
+$defaults = [
+    "class" => "",
+    "width" => "24",
+    "height" => "24",
+];
+
+$args = wp_parse_args($args, $defaults);
+```
+
+We start by defining default attributes for the SVG — such as class, width, and height. The `wp_parse_args()` function merges the defaults with any custom attributes you pass when calling `theme_get_svg()`.
+
+👉 This makes the function flexible: you can override only what you need.
+
+### 2. Load the SVG Content (From File or URL)
+
+```php
+// Determine the icon path
+    if (!empty($url)) {
+        // Fetch the SVG from an external URL (WordPress Media Library or external source)
+        $response = wp_remote_get($url);
+
+        if (
+            is_wp_error($response) ||
+            wp_remote_retrieve_response_code($response) !== 200
+        ) {
+            return "";
+        }
+
+        $svg = wp_remote_retrieve_body($response);
+    } else {
+        // Fetch the SVG from theme assets
+        $icon_path =
+            get_template_directory() . "/assets/icons/" . $icon . ".svg";
+
+        if (!file_exists($icon_path)) {
+            return "";
+        }
+
+        $svg = file_get_contents($icon_path);
+    }
+```
+
+This section determines **where the SVG should come from**:
+
+- If you provide a `$url`, it fetches the SVG from a remote location (like WordPress Media Library).
+
+- Otherwise, it looks for a local file in your theme’s `/assets/icons/` folder.
+
+Both approaches include error handling:
+
+- For remote files, it checks for request errors or HTTP failures.
+
+- For local files, it checks if the file exists.
+
+### 3. Inject Attributes into the `<svg>` Tag
+
+```php
+$svg = preg_replace(
+    "/<svg/",
+    sprintf(
+        '<svg class="%s" width="%s" height="%s"',
+        esc_attr($args["class"]),
+        esc_attr($args["width"]),
+        esc_attr($args["height"])
+    ),
+    $svg,
+    1
+);
+```
+
+This is where the magic happens. Instead of echoing a plain SVG, we **inject our attributes** into the first `<svg>` tag in the file, using `preg_replace()` with a limit of 1.
+
+This gives us full control over:
+
+- CSS styling (`class`)
+
+- Size (`width` and `height`)
+
+- Accessibility (`aria-*`, `role`, etc.)
+
+## Usage
+
+You can now use it anywhere in your theme templates, just like this:
+
+```php
+
+echo theme_get_svg(
+	"iconname",
+	null,
+	array(
+	    "class" => "custom-class",
+	    "width" => "30",
+	    "height" => "30"
+    ),
+);
+```
+
+## Conclusion
+
+Rendering SVG icons directly as inline code in WordPress gives you full control over styling, accessibility, and performance — without relying on external libraries or icon fonts.
+
+With this function, you can streamline your workflow, improve page speed, and build a more maintainable front-end. Whether you're working on a custom theme or a client project, this approach keeps your codebase clean and flexible.
+
+Feel free to tweak the function to suit your needs — and if you found this useful, consider sharing it with fellow developers!
+
+Want to grab the full code? Check out the complete function on GitHub Gist:
+
+👉 [View `theme_get_svg()` on Gist](https://gist.github.com/jorgearaya474/d61c6d3871b92797ea20c5dc81b0b5ca)
