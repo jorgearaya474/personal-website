@@ -19,16 +19,18 @@ export default async function Home() {
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:min-h-[700px]">
             <div className="col-span-1 md:col-span-3 lg:col-span-2 flex flex-col items-start justify-center gap-6 order-last md:order-first">
-              <h1 className="font-primary font-black text-white text-3xl md:text-6xl leading-22 ">
+              <h1 className="font-primary font-black text-white text-4xl md:text-6xl leading-22">
                 Jorge Araya <br />
-                <span className="text-teal-400"> Full-Stack Developer</span>.
+                <span className="text-2xl md:text-6xl text-teal-400">
+                  Full-Stack Developer
+                </span>
+                .
               </h1>
-              <p className="font-secondary text-white font-normal text-xl md:text-xl">
-                I build fast, scalable, and high-converting websites using
-                modern web technologies. From custom WordPress solutions to
-                Next.js and headless architectures, I help businesses craft
-                powerful online experiences. <br /> Let’s bring your project to
-                life!
+              <p className="font-secondary text-white font-normal text-xl md:text-2xl">
+                I'm a WordPress specialist creating fast, scalable,
+                high-converting websites. Also experienced with Next.js, React
+                and Laravel.
+                <br /> Let’s bring your project to life!
               </p>
               <CtaButton
                 href="mailto:jorgearaya474@gmail.com"
