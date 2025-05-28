@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Albert_Sans, Barlow } from "next/font/google";
 import Header from "@/components/layout/Header";
 import "./globals.css";
@@ -20,9 +19,9 @@ const secondary = Barlow({
 export const metadata = {
   title: "Jorge Araya | Jorge Araya Web Developer",
   description:
-    "Crafting high-quality web experiences with modern technologies. I'm Jorge Araya, a seasoned web developer specializing in WordPress, Next.js and Laravel. Explore my work, insights, and services to elevate your digital presence.",
+    "I'm Jorge Araya, a web developer specializing in WordPress, Next.js & Laravel. Explore my work and services to boost your digital presence.",
   icons: {
-    icon: "/public/favicon.ico",
+    icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
@@ -37,6 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Jorge Araya – Web Developer" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://jorgearaya.com/og-image.png" />
+        <meta property="og:url" content="https://jorgearaya.com/" />
+        <meta property="og:description" content="I'm Jorge Araya, a web developer specializing in WordPress, Next.js & Laravel. Explore my work and services to boost your digital presence." />
         {/* Google Analytics */}
         <Script
           strategy="afterInteractive"
