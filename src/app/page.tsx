@@ -1,14 +1,14 @@
-import Image from "next/image";
 import CtaButton from "@/components/ui/CtaButton";
-import Photo from "@/images/jorge-araya-profile-picture-wp.webp";
 import TechStack from "@/components/ui/TechStack";
 import ContactBanner from "@/components/layout/ContactBanner";
-import CheckMarkIcon from "@/components/icons/checkMarkIcon";
+import RocketIcon from "@/components/icons/RocketIcon";
+import ResponsiveIcon from "@/components/icons/ResponsiveIcon";
+import SpeedIcon from "@/components/icons/SpeedIcon";
 
 export const metadata = {
   title: "Home | Jorge Araya Web Developer",
   description:
-    "Crafting high-quality web experiences with modern technologies. I'm Jorge Araya, a seasoned web developer specializing in WordPress, Next.js and Laravel. Explore my work, insights, and services to elevate your digital presence.",
+    "I'm Jorge Araya, a web developer specializing in WordPress, Next.js & Laravel. Explore my work and services to boost your digital presence.",
   keywords: ["wordpress developer", "web developer", "web costa rica"],
 };
 
@@ -30,7 +30,9 @@ export default async function Home() {
                 I'm a WordPress specialist creating fast, scalable,
                 high-converting websites. Also experienced with Next.js, React
                 and Laravel.
-                <br /> Let’s bring your project to life!
+              </p>
+              <p className="font-secondary text-white font-normal text-xl md:text-2xl">
+                Got a project in mind?
               </p>
               <CtaButton
                 href="mailto:jorgearaya474@gmail.com"
@@ -48,51 +50,45 @@ export default async function Home() {
         <div className="flex flex-col gap-12">
           <div className="max-w-3xl">
             <h2 className="font-primary text-bold text-3xl lg:text-5xl block font-bold text-white text-left ">
-              Elevating Web Development to Make You Stand Out!
+              Custom Web Solutions for Meaningful Online Growth
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="bg-zinc-800/60 p-8 rounded-lg">
-              <div className="flex flex-row gap-4 justify-start items-center">
-                <CheckMarkIcon />
-                <h3 className="font-primary text-2xl font-bold text-white">
+              <div className="flex flex-col gap-4 justify-start items-start">
+                <RocketIcon className="w-12" />
+                <h3 className="font-primary text-3xl font-bold text-white">
                   Custom development
                 </h3>
               </div>
               <p className="mt-3 text-white text-xl font-secondary">
-                Transform your ideas into reality with websites tailored to your
-                brand’s needs and goals. I create solutions that not only meet
-                technical requirements but also enhance your business identity
-                and user engagement.
+                Build websites custom-made for your brand’s identity and goals.
+                My solutions go beyond functionality—they support growth and
+                elevate user engagement.
               </p>
             </div>
             <div className="bg-zinc-800/60 p-8 rounded-lg">
-              <div className="flex flex-row gap-4 justify-start items-center">
-                <CheckMarkIcon />
-                <h3 className="font-primary text-2xl font-bold text-white">
+              <div className="flex flex-col gap-4 justify-start items-start">
+                <ResponsiveIcon className="w-12" />
+                <h3 className="font-primary text-3xl font-bold text-white">
                   Adaptive Web Design
                 </h3>
               </div>
               <p className="mt-3 text-white text-xl font-secondary">
-                Ensure your website delivers a seamless experience across all
-                devices. From mobile phones to desktops, I design responsive
-                layouts that prioritize user experience and accessibility,
-                improving engagement and conversion rates.
+                Responsive layouts that look great and perform well on any
+                device, improving both accessibility and conversions.
               </p>
             </div>
             <div className="bg-zinc-800/60 p-8 rounded-lg">
-              <div className="flex flex-row gap-4 justify-start items-center">
-                <CheckMarkIcon />
-                <h3 className="font-primary text-2xl font-bold text-white">
+              <div className="flex flex-col gap-4 justify-start items-start">
+                <SpeedIcon className="w-12" />
+                <h3 className="font-primary text-3xl font-bold text-white">
                   Site Optimization
                 </h3>
               </div>
               <p className="mt-3 text-white text-xl font-secondary">
-                Boost your website`&apos;s speed and scalability with advanced
-                techniques like caching, image optimization, and code
-                minification. I use industry-leading tools to ensure your site
-                loads faster, retains visitors, and performs optimally across
-                all platforms.
+                Speed up your site with caching, image compression, and clean
+                code—so users (and Google) love it.
               </p>
             </div>
           </div>
@@ -109,16 +105,15 @@ export default async function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="">
               <p className="text-white text-xl font-secondary">
-                A strong foundation built on reliable tools and proven
-                methodologies supports every project. The focus is on
-                performance, scalability, and adaptability, selecting the right
-                technologies to meet each challenge’s unique demands.
+                Every project starts with a solid foundation. I use reliable
+                tools and proven methodologies to ensure your website performs
+                well, is easy to maintain, and can grow with your business.
               </p>
               <br></br>
               <p className="text-white text-xl font-secondary">
-                Experienced in custom WordPress development—whether building
-                fully custom themes and plugins or enhancing performance and
-                flexibility with leading builders like Elementor and others.
+                Experienced in custom WordPress development, from building fully
+                tailored themes and plugins to optimizing performance and
+                flexibility using leading builders like Elementor and others.
               </p>
             </div>
             <div className="md:col-span-2">

@@ -36,6 +36,21 @@ export async function getPosts() {
   return projects;
 }
 
+// Get all the posts slugs fro static generation
+export async function getAllPostSlugs() {
+  try {
+    const files = await fs.readdir(postsDirectory);
+    return files
+      .filter((file) => path.extname(file) === ".mdx")
+      .map((file) => ({
+        slug: path.basename(file, ".mdx"),
+      }));
+  } catch (error) {
+    console.error("Error reading the posts directory: ", error);
+    return [];
+  }
+}
+
 // Get single post by slug
 export async function getPostBySlug(slug: string) {
   const filePath = path.join(postsDirectory, `${slug}.mdx`);
