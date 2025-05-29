@@ -42,6 +42,10 @@ interface ImageGalleryProps {
   images: ImageItem[];
 }
 
+interface IconProps {
+  className: string;
+}
+
 export type {
   HeroSectionProps,
   CtaButtonProps,
@@ -50,4 +54,5 @@ export type {
   Post,
   ImageItem,
   ImageGalleryProps,
+  IconProps,
 };
