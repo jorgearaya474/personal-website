@@ -1,9 +1,15 @@
 import HeroSection from "@/components/layout/HeroSection";
-import { getPostBySlug } from "@/lib/postsHandler";
+import { getPostBySlug, getAllPostSlugs } from "@/lib/postsHandler";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import ContactBanner from "@/components/layout/ContactBanner";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/atom-one-dark.css";
+
+// Generate static urls
+export async function generateStaticParams() {
+  const posts = await getAllPostSlugs();
+  return posts.map((post) => ({ slug: post.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -25,6 +31,18 @@ export async function generateMetadata({
     description:
       post.description ||
       "I'm Jorge Araya, a passionate web developer with years of experience building dynamic, user-friendly websites.",
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      publishedTime: post.date,
+      tags: post.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+    },
   };
 }
 
