@@ -53,7 +53,7 @@ const TechStack = () => {
       {technologies.map((tech, index) => (
         <div
           key={index}
-          className="flex flex-row items-center justify-center h-20 bg-zinc-800 rounded-lg p-4"
+          className={`flex flex-row items-center justify-center h-20 bg-zinc-800 rounded-lg p-4 ${index === technologies.length - 1 ? 'col-span-2 md:col-span-1' : ''}`}
         >
           <div className="mr-2">{tech.icon}</div>
           <div className="font-primary text-white font-medium">{tech.name}</div>

@@ -17,26 +17,24 @@ export default async function Home() {
     <>
       <div className="gradient-bg bg-zinc-900 relative py-32 md:py-0">
         <div className="container relative z-10">
-          <div className="flex flex-col items-start justify-center md:min-h-[700px]">
-            <div className="flex flex-col items-start justify-center gap-6 max-w-3xl">
-              <h1 className="font-primary font-black text-white text-4xl md:text-7xl leading-22">
+          <div className="flex flex-col items-start justify-center md:min-h-[800px]">
+            <div className="flex flex-col items-start justify-center gap-6 max-w-4xl">
+              <h1 className="font-primary font-black text-white text-5xl md:text-6xl lg:text-8xl md:!leading-[3.6rem] uppercase">
                 Jorge Araya <br />
-                <span className="text-3xl md:text-6xl text-teal-400">
-                  Full-Stack Developer
+                <span className="text-3xl md:text-5xl text-teal-400 normal-case">
+                  Full-stack developer<span className="text-white">.</span>
                 </span>
-                .
+
               </h1>
               <p className="font-secondary text-white font-normal text-xl md:text-2xl">
-                I'm a WordPress specialist creating fast, scalable,
-                high-converting websites. Also experienced with Next.js, React
-                and Laravel.
+                I’m a <b>WordPress specialist</b> creating fast, scalable, and high-converting websites that grow your business. I also work with modern tools like Next.js, React, and Laravel to build tailored solutions.
               </p>
-              <p className="font-secondary text-white font-normal text-xl md:text-2xl">
-                Got a project in mind?
+              <p className="font-secondary text-white font-bold text-xl md:text-2xl">
+                Ready to bring your project to life?
               </p>
               <CtaButton
                 href="mailto:jorgearaya474@gmail.com"
-                text="Let's Talk"
+                text="Let’s make it happen!"
                 title="Contact Jorge Araya"
                 className="w-auto"
               />
@@ -49,7 +47,7 @@ export default async function Home() {
       <div className="container">
         <div className="flex flex-col gap-12">
           <div className="max-w-3xl">
-            <h2 className="font-primary text-bold text-3xl lg:text-5xl block font-bold text-white text-left ">
+            <h2 className="font-primary text-3xl lg:text-5xl block font-black text-white text-left">
               Custom Web Solutions for Meaningful Online Growth
             </h2>
           </div>
@@ -98,7 +96,7 @@ export default async function Home() {
       <div className="container py-12 lg:py-[10rem]">
         <div className="flex flex-col gap-12">
           <div className="max-w-3xl">
-            <h2 className="font-primary text-3xl lg:text-5xl block font-bold text-white text-left">
+            <h2 className="font-primary text-3xl lg:text-5xl block font-black text-white text-left">
               Technologies for Scalable Solutions
             </h2>
           </div>
