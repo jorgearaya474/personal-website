@@ -9,7 +9,7 @@ const CtaButton: React.FC<CtaButtonProps> = ({
 }) => {
   return (
     <a
-      className={`text-lg font-medium font-primary rounded-xl text-black px-5 py-3 bg-teal-400 hover:bg-amber-400 transition-colors duration-300 ${className}`}
+      className={`text-lg font-bold font-primary rounded-xl text-black px-5 py-3 bg-teal-400 hover:bg-amber-400 transition-colors transition-transform duration-300 hover:scale-105 ${className}`}
       href={href}
       target={target}
       title={title}

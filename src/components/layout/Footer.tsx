@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     <footer className="bg-zinc-950 py-16">
       <div className="container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>© {currentYear} - Crafted with ☕ by Jorge Araya</div>
+          <div className="font-secondary text-xl text-white">© {currentYear} - Crafted with ☕ by Jorge Araya</div>
           <div>
             <SocialButtons />
           </div>
