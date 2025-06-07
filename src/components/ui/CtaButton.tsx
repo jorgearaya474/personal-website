@@ -1,4 +1,10 @@
-import { CtaButtonProps } from "@/types/types";
+interface CtaButtonProps {
+  href: string;
+  text: string;
+  target?: "_blank" | "_self";
+  title: string;
+  className: string;
+}
 
 const CtaButton: React.FC<CtaButtonProps> = ({
   href,

@@ -1,7 +1,9 @@
-const CheckMarkIcon = () => (
+import { IconProps } from "@/types/types";
+
+const CheckMarkIcon = ({ className }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="fill-teal-400 w-12 h-12"
+    className={`fill-teal-400 ${className}`}
     version="1.1"
     width="512"
     height="512"
@@ -15,7 +17,6 @@ const CheckMarkIcon = () => (
         data-name="14 checklist, mark,"
         opacity="1"
         data-original="#000000"
-        className=""
       ></path>
     </g>
   </svg>
