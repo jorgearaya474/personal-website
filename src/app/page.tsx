@@ -8,8 +8,13 @@ import SpeedIcon from "@/components/icons/SpeedIcon";
 export const metadata = {
   title: "Home | Jorge Araya Web Developer",
   description:
-    "I'm Jorge Araya, a web developer specializing in WordPress, Next.js & Laravel. Explore my work and services to boost your digital presence.",
-  keywords: ["wordpress developer", "web developer", "web costa rica"],
+    "I'm Jorge Araya, a web developer from Costa Rica specializing in WordPress, Next.js & Laravel. Explore my work and services to boost your digital presence.",
+  keywords: [
+    "wordpress developer",
+    "web developer",
+    "web costa rica",
+    "Wordpress costa rica",
+  ],
 };
 
 export default async function Home() {
@@ -24,10 +29,12 @@ export default async function Home() {
                 <span className="text-3xl md:text-5xl text-teal-400 normal-case">
                   Full-stack developer<span className="text-white">.</span>
                 </span>
-
               </h1>
               <p className="font-secondary text-white font-normal text-xl md:text-2xl">
-                I’m a <b>WordPress specialist</b> creating fast, scalable, and high-converting websites that grow your business. I also work with modern tools like Next.js, React, and Laravel to build tailored solutions.
+                I’m a <b>WordPress specialist</b> creating fast, scalable, and
+                high-converting websites that grow your business. I also work
+                with modern tools like Next.js, React, and Laravel to build
+                tailored solutions.
               </p>
               <p className="font-secondary text-white font-bold text-xl md:text-2xl">
                 Ready to bring your project to life?

@@ -1,16 +1,3 @@
-interface HeroSectionProps {
-  heading: string;
-  className: string;
-}
-
-interface CtaButtonProps {
-  href: string;
-  text: string;
-  target?: "_blank" | "_self";
-  title: string;
-  className: string;
-}
-
 interface TechSkill {
   name: string;
   icon: React.ReactNode;
@@ -46,13 +33,19 @@ interface IconProps {
   className: string;
 }
 
+interface ToolProps {
+  title: string;
+  url: string;
+  image: string;
+  description: string;
+}
+
 export type {
-  HeroSectionProps,
-  CtaButtonProps,
   TechSkill,
   Project,
   Post,
   ImageItem,
   ImageGalleryProps,
   IconProps,
+  ToolProps,
 };

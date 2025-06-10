@@ -1,4 +1,7 @@
-import type { HeroSectionProps } from "@/types/types";
+interface HeroSectionProps {
+  heading: string;
+  className: string;
+}
 
 const HeroSection: React.FC<HeroSectionProps> = ({ heading, className }) => {
   return (
