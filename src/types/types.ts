@@ -33,6 +33,13 @@ interface IconProps {
   className: string;
 }
 
+interface ToolProps {
+  title: string;
+  url: string;
+  image: string;
+  description: string;
+}
+
 export type {
   TechSkill,
   Project,
@@ -40,4 +47,5 @@ export type {
   ImageItem,
   ImageGalleryProps,
   IconProps,
+  ToolProps,
 };
