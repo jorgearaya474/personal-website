@@ -14,9 +14,9 @@ export default async function ProjectsPage() {
 
   return (
     <>
-      <HeroSection heading="What I've Been Working On" className="" />
+      <HeroSection heading="Recent Projects" className="" />
       <div className="container pb-12 lg:pb-[10rem]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <ProjectItem
               key={project.title}

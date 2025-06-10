@@ -33,27 +33,26 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="font-secondary">
             <p className="text-white text-xl mb-3 text-justify">
-              I am a web developer with a passion for crafting intuitive and
-              engaging websites. With over seven years of experience in the
-              industry, I have had the opportunity to work on a variety of
-              projects. This diverse experience has allowed me to develop a
-              strong skill set in popular tools and technologies such as
-              WordPress, React, Python, and PHP.
+              I’m a web developer from Costa Rica 🇨🇷 with a passion for crafting
+              intuitive and engaging websites. With over eight years of
+              experience in the industry, I’ve had the chance to work on a wide
+              range of projects — from custom WordPress builds to modern web
+              apps using React, NextJS, and Laravel.
             </p>
             <p className="text-white text-xl mb-3 text-justify">
-              I enjoy being up to date with the latest technologies and trends,
-              expanding my knowledge. I&apos;m always eager to take on new
-              challenges and am excited to see where my career as a developer
-              takes me.
+              This diverse background has helped me develop a strong, adaptable
+              skill set and a love for solving problems through clean,
+              thoughtful code.
             </p>
             <p className="text-white text-xl mb-3 leading-8 text-justify">
-              Outside of the digital world, I am an avid nature lover and
-              traveler. Exploring the beauty of the outdoors and embarking on
-              adventures is one of my greatest joys.
+              I enjoy staying up to date with the latest technologies and
+              trends, always looking for new things to learn and new challenges
+              to tackle. I’m excited to keep growing and see where this journey
+              takes me.
             </p>
             <p className="text-white text-xl mb-2 leading-8 text-justify">
-              Beyond my love for nature, I am a coffee enthusiast who savors the
-              art of crafting the perfect cup.
+              Outside the digital world, I’m a nature lover and frequent
+              traveler — exploring the outdoors is one of my greatest joys.
             </p>
           </div>
           <div>

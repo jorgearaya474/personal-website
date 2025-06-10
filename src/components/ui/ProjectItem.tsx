@@ -12,10 +12,10 @@ const ProjectItem: React.FC<Project> = ({
   return (
     <div className="bg-slate-800/60 rounded-xl overflow-hidden shadow-lg relative group">
       <Image
-        className="w-full min-h-[200px] object-cover"
+        className="w-full h-full object-cover"
         src={image}
         alt={title}
-        width={300}
+        width={400}
         height={300}
       ></Image>
       <div className="opacity-0 group-hover:opacity-100 absolute top-0 bottom-0 w-full backdrop-blur-sm bg-zinc-900/90 border-2 border-teal-400 rounded-xl flex flex-col items-start justify-between gap-3 px-6 py-6 z-10 transition-opacity duration-200">
