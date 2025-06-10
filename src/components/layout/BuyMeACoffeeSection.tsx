@@ -1,3 +1,8 @@
+/**
+ * A section to display a "Buy Me a Coffee" call to action.
+ * @param title The title of the section.
+ * @param text The text to display below the title.
+ */
 import CtaButton from "../ui/CtaButton";
 
 interface BMACSectionProps {
