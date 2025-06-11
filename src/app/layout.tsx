@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 const primary = Albert_Sans({
   weight: ["400", "500", "700", "900"],
@@ -39,9 +40,15 @@ export default function RootLayout({
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content="Jorge Araya – Web Developer" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://jorgearaya.com/og-image.png" />
+        <meta
+          property="og:image"
+          content="https://jorgearaya.com/og-image.png"
+        />
         <meta property="og:url" content="https://jorgearaya.com/" />
-        <meta property="og:description" content="I'm Jorge Araya, a web developer specializing in WordPress, Next.js & Laravel. Explore my work and services to boost your digital presence." />
+        <meta
+          property="og:description"
+          content="I'm Jorge Araya, a web developer specializing in WordPress, Next.js & Laravel. Explore my work and services to boost your digital presence."
+        />
         {/* Google Analytics */}
         <Script
           strategy="afterInteractive"
@@ -55,6 +62,7 @@ export default function RootLayout({
             gtag('config', '${NEXT_GA}');
           `}
         </Script>
+        <Analytics />
       </head>
       <body
         className={`${primary.variable} ${secondary.variable} font-opensans antialiased bg-zinc-900`}
