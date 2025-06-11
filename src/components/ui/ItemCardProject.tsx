@@ -4,13 +4,13 @@ import Link from "next/link";
 import truncateText from "@/lib/truncateText";
 import Image from "next/image";
 
-const ItemCardTool: React.FC<ToolProps> = ({
+const ItemCardProject: React.FC<ToolProps> = ({
   title,
   url,
   image,
   description,
 }) => {
-  const toolUrl = `/tools/${url}`;
+  const toolUrl = `/projects/${url}`;
   return (
     <div className="bg-zinc-800/60 rounded-xl overflow-hidden shadow-lg">
       <div className="flex flex-col items-start justify-between h-full gap-4 px-6 py-6">
@@ -44,4 +44,4 @@ const ItemCardTool: React.FC<ToolProps> = ({
   );
 };
 
-export default ItemCardTool;
+export default ItemCardProject;

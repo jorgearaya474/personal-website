@@ -8,7 +8,7 @@ const routesArray = [
   ["Home", "/"],
   ["About", "/about"],
   ["Projects", "/projects"],
-  ["Tools", "/tools"],
+  ["Works", "/recent-work"],
   ["Blog", "/blog"],
 ];
 

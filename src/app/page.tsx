@@ -21,10 +21,10 @@ export default async function Home() {
   return (
     <>
       <div className="gradient-bg bg-zinc-900 relative py-32 md:py-0">
-        <div className="container relative z-10">
+        <div className="container relative z-10 pt-16">
           <div className="flex flex-col items-start justify-center md:min-h-[800px]">
             <div className="flex flex-col items-start justify-center gap-6 max-w-4xl">
-              <h1 className="font-primary font-black text-white text-5xl md:text-6xl lg:text-8xl md:!leading-[3.6rem] uppercase">
+              <h1 className="font-primary font-black text-white text-5xl md:text-6xl md:!leading-[3.6rem] uppercase">
                 Jorge Araya <br />
                 <span className="text-3xl md:text-5xl text-teal-400 normal-case">
                   Full-stack developer<span className="text-white">.</span>
