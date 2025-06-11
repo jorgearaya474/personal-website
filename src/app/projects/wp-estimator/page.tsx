@@ -1,4 +1,4 @@
-import WPEstimator from "@/components/tools/WPEstimator";
+import WPEstimator from "@/components/projects/WPEstimator";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

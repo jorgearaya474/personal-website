@@ -1,8 +1,8 @@
-import { Project } from "@/types/types";
+import { WorkProps } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
 
-const ProjectItem: React.FC<Project> = ({
+const WorkItem: React.FC<WorkProps> = ({
   title,
   image,
   link,
@@ -52,4 +52,4 @@ const ProjectItem: React.FC<Project> = ({
   );
 };
 
-export default ProjectItem;
+export default WorkItem;

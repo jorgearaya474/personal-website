@@ -3,7 +3,7 @@ interface TechSkill {
   icon: React.ReactNode;
 }
 
-interface Project {
+interface WorkProps {
   title: string;
   order: number;
   image: string;
@@ -42,7 +42,7 @@ interface ToolProps {
 
 export type {
   TechSkill,
-  Project,
+  WorkProps,
   Post,
   ImageItem,
   ImageGalleryProps,

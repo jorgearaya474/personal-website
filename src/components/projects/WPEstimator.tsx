@@ -32,16 +32,16 @@ interface Additional {
 
 // Configuration data for design hours, builder factors, features, and additionals
 const CONFIGDATA = {
-  designHours: { simple: 3.5, medium: 4.5, complex: 5.5 } as Record<
+  designHours: { simple: 4.5, medium: 5, complex: 6.1 } as Record<
     DesignComplexity,
     number
   >,
   builderFactor: {
     elementor: 1,
-    bricks: 1,
+    bricks: 1.1,
     beaver: 1.2,
-    divi: 1.3,
-    gutenberg: 1.4,
+    divi: 1.25,
+    gutenberg: 1.5,
     custom: 2,
   } as Record<Builder, number>,
   features: {
@@ -50,7 +50,7 @@ const CONFIGDATA = {
     membership: { name: "Memberships", hours: 15 },
     multilingual: { name: "Multilingual", hours: 8 },
     booking: { name: "Bookings", hours: 12 },
-    custom: { name: "Custom", hours: 25 },
+    custom: { name: "Custom", hours: 18 },
   } as Record<string, Feature>,
   additionals: {
     migration: { name: "Content/Posts migration", hours: 10 },
@@ -85,6 +85,34 @@ export default function WPEstimator() {
   };
 
   /**
+   * Calculates the base hours for the project based on the number of pages and the base hours per page.
+   * Applies a weighting system to account for diminishing returns on additional pages.
+   *
+   * Time progression:
+   * Page 1: 100%
+   * Page 2: 95%
+   * Page 3: 90%
+   * Page 4: 85%
+   * Page 5: 75%
+   * Page 6+: 50%
+   *
+   * @param pages The number of pages in the project.
+   * @param base_x_page The base hours required for a single page.
+   * @returns The total base hours for the project.
+   */
+  const calculateBaseHours = (pages: number, base_x_page: number): number => {
+    const weights = [1, 0.95, 0.9, 0.85, 0.75];
+    let total = 0;
+
+    for (let p = 0; p < pages; p++) {
+      const weight = weights[p] ?? 0.5;
+      total += base_x_page * weight;
+    }
+
+    return total;
+  };
+
+  /**
    * Calculates comprehensive project estimation using the formula:
    * Base Hours = pages × designComplexityHours × builderFactor
    * Total Hours = (baseHours + featureHours + additionalHours) × (1 + buffer%)
@@ -96,11 +124,12 @@ export default function WPEstimator() {
    * @returns Object containing base hours, total hours with buffer, estimated days, and weeks
    */
   const estimate = useMemo(() => {
-    // Calculate base hours: pages × complexity multiplier × builder efficiency factor
-    const base =
-      pages *
+    // Calculate base per page hours: complexity multiplier × builder efficiency factor
+    const basePerPage =
       CONFIGDATA.designHours[designComplexity] *
       CONFIGDATA.builderFactor[builder];
+
+    const base = calculateBaseHours(pages, basePerPage);
 
     // Sum hours for all selected special features
     const featuresHours = Object.keys(features)
@@ -212,6 +241,9 @@ export default function WPEstimator() {
                   onChange={handlePagesChange}
                   className="font-secondary text-md font-medium w-full p-2 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 ></input>
+                <p className="font-secondary text-sm">
+                  Pages includes templates
+                </p>
               </div>
               <div>
                 <label className="block font-secondary text-lg font-medium text-white mb-2">
@@ -320,6 +352,7 @@ export default function WPEstimator() {
                   </div>
                   <input
                     type="range"
+                    value={buffer}
                     onChange={handleBufferChange}
                     min="10"
                     max="50"
