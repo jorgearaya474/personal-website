@@ -10,30 +10,34 @@ const ItemCardProject: React.FC<ToolProps> = ({
   image,
   description,
 }) => {
-  const toolUrl = `/projects/${url}`;
   return (
     <div className="bg-zinc-800/60 rounded-xl overflow-hidden shadow-lg">
       <div className="flex flex-col items-start justify-between h-full gap-4 px-6 py-6">
         <div className="flex flex-col gap-3">
-          <Link href={toolUrl} className="overflow-hidden rounded-md">
+          <Link
+            href={url}
+            target="_blank"
+            className="overflow-hidden rounded-md"
+          >
             <Image
               src={image}
-              className="rounded-md hover:scale-105 transition-transform duration-300"
-              width={400}
-              height={200}
+              className="rounded-md hover:scale-105 transition-transform duration-300 h-64 object-cover"
+              width={500}
+              height={300}
               alt={title}
             ></Image>
           </Link>
           <h3 className="font-primary font-bold text-2xl hover:text-teal-400 transition-colors duration-300">
-            <Link href={toolUrl}>{title}</Link>
+            <Link href={url} target="_blank">
+              {title}
+            </Link>
           </h3>
-          <p className="text-white font-secondary text-base">
-            {truncateText(description)}
-          </p>
+          <p className="text-white font-secondary text-base">{description}</p>
         </div>
         <div>
           <CtaButton
-            href={toolUrl}
+            href={url}
+            target="_blank"
             title={title}
             text="Try It Now"
             className="font-medium shrink-0 w-auto inline-flex"

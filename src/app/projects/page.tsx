@@ -19,10 +19,17 @@ export const metadata: Metadata = {
 const toolsData: ToolProps[] = [
   {
     title: "WordPress Estimator",
-    url: "wp-estimator",
+    url: "/projects/wp-estimator",
     image: "/images/projects/wp-estimator.webp",
     description:
       "Quickly estimate the timeline of your next WordPress project with this simple, interactive tool.",
+  },
+  {
+    title: "Post Bulk Actions",
+    url: "https://chromewebstore.google.com/detail/nbpcfgdpkpobefgjgonollgflpfcgeko?utm_source=portfolio.",
+    image: "/images/projects/post-bulk-actions.webp",
+    description:
+      "Streamline your WordPress editing workflow with this Chrome extension that adds bulk actions, making it easier and faster to manage your posts.",
   },
 ];
 
