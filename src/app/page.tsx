@@ -4,11 +4,14 @@ import ContactBanner from "@/components/layout/ContactBanner";
 import RocketIcon from "@/components/icons/RocketIcon";
 import ResponsiveIcon from "@/components/icons/ResponsiveIcon";
 import SpeedIcon from "@/components/icons/SpeedIcon";
+import FeaturedCard from "@/components/ui/FeaturedCard";
+import StepCard from "@/components/ui/StepCard";
+
 
 export const metadata = {
-  title: "Home | Jorge Araya Web Developer",
+  title: "WordPress Developer Focused on Clean, Scalable Development | Jorge Araya",
   description:
-    "I'm Jorge Araya, a web developer from Costa Rica specializing in WordPress, Next.js & Laravel. Explore my work and services to boost your digital presence.",
+    "WordPress developer specializing in clean architecture, scalable builds, and long-term maintainability. I help businesses build fast, reliable websites that drive real results.",
   keywords: [
     "wordpress developer",
     "web developer",
@@ -20,99 +23,91 @@ export const metadata = {
 export default async function Home() {
   return (
     <>
-      <div className="gradient-bg bg-zinc-900 relative py-32 md:py-0">
+      <section className="gradient-bg relative py-32 md:py-0">
         <div className="container relative z-10 pt-16">
           <div className="flex flex-col items-start justify-center md:min-h-[800px]">
             <div className="flex flex-col items-start justify-center gap-6 max-w-4xl">
-              <h1 className="font-primary font-black text-white text-5xl md:text-6xl md:!leading-[3.6rem] uppercase">
-                Jorge Araya <br />
-                <span className="text-3xl md:text-5xl text-teal-400 normal-case">
-                  Full-stack developer<span className="text-white">.</span>
+              <h1 className="">
+                WordPress Developer Focused on Clean, Scalable Builds
+                <span className="text-accent">{' '}that turn visitors into customers
+                  <span className="text-white">.</span>
                 </span>
               </h1>
-              <p className="font-secondary text-white font-normal text-xl md:text-2xl">
-                I’m a <b>WordPress specialist</b> creating fast, scalable, and
-                high-converting websites that grow your business. I also work
-                with modern tools like Next.js, React, and Laravel to build
-                tailored solutions.
-              </p>
-              <p className="font-secondary text-white font-bold text-xl md:text-2xl">
-                Ready to bring your project to life?
+              <p className="font-secondary font-normal text-xl md:text-2xl">
+                I help growing businesses build fast, scalable WordPress websites that drive measurable results.
               </p>
               <CtaButton
-                href="mailto:jorgearaya474@gmail.com"
-                text="Let’s make it happen!"
-                title="Contact Jorge Araya"
+                href="#contact"
+                text="Start a Project"
+                title="Contact Jorge"
                 className="w-auto"
               />
             </div>
           </div>
         </div>
-        <div className="bg-gradient-to-b from-transparent to-zinc-900 absolute bottom-0 w-full h-36"></div>
-      </div>
+        <div className="bg-gradient-to-b from-transparent to-background absolute bottom-0 w-full h-40"></div>
+      </section>
 
-      <div className="container">
+      <section className="py-12 lg:py-20">
+        <div className="container">
         <div className="flex flex-col gap-12">
           <div className="max-w-3xl">
-            <h2 className="font-primary text-3xl lg:text-5xl block font-black text-white text-left">
+            <h2>
               Custom Web Solutions for Meaningful Online Growth
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="bg-zinc-800/60 p-8 rounded-lg">
-              <div className="flex flex-col gap-4 justify-start items-start">
-                <RocketIcon className="w-12" />
-                <h3 className="font-primary text-3xl font-bold text-white">
-                  Custom development
-                </h3>
-              </div>
-              <p className="mt-3 text-white text-xl font-secondary">
-                Build websites custom-made for your brand’s identity and goals.
-                My solutions go beyond functionality—they support growth and
-                elevate user engagement.
-              </p>
-            </div>
-            <div className="bg-zinc-800/60 p-8 rounded-lg">
-              <div className="flex flex-col gap-4 justify-start items-start">
-                <ResponsiveIcon className="w-12" />
-                <h3 className="font-primary text-3xl font-bold text-white">
-                  Adaptive Web Design
-                </h3>
-              </div>
-              <p className="mt-3 text-white text-xl font-secondary">
-                Responsive layouts that look great and perform well on any
-                device, improving both accessibility and conversions.
-              </p>
-            </div>
-            <div className="bg-zinc-800/60 p-8 rounded-lg">
-              <div className="flex flex-col gap-4 justify-start items-start">
-                <SpeedIcon className="w-12" />
-                <h3 className="font-primary text-3xl font-bold text-white">
-                  Site Optimization
-                </h3>
-              </div>
-              <p className="mt-3 text-white text-xl font-secondary">
-                Speed up your site with caching, image compression, and clean
-                code—so users (and Google) love it.
-              </p>
-            </div>
+            <FeaturedCard
+              icon={<RocketIcon className="w-12" />}
+              heading="Custom development"
+              text="Custom WordPress builds engineered for performance, scalability and long-term growth."
+            />
+
+            <FeaturedCard
+              icon={<ResponsiveIcon className="w-12" />}
+              heading="Adaptive Web Design"
+              text="Mobile-first experiences designed to convert across every device."
+            />
+
+            <FeaturedCard
+              icon={<SpeedIcon className="w-12" />}
+              heading="Site Optimization"
+              text="Advanced performance optimization including caching strategy, Core Web Vitals improvements, and clean code architecture."
+            />
           </div>
         </div>
       </div>
+      </section>
 
-      <div className="container py-12 lg:py-[10rem]">
+    <section className="py-12 lg:py-20">
+      <div className="container">
+        <div className="flex flex-col gap-12">
+          <div className="max-w-3xl">
+            <h2 className="font-primary text-3xl lg:text-5xl block font-black text-foreground text-left">
+              A Clear, Strategic Development Process
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <StepCard step="1" heading="Strategy & Planning" text="Define goals, target audience, and performance metrics."/>
+            <StepCard step="2" heading="Design & Architecture" text="UX-focused structure and scalable technical foundation."/>
+            <StepCard step="3" heading="Development & Optimization" text="Clean code, performance tuning, and Core Web Vitals optimization."/>
+            <StepCard step="4" heading="Launch & Continuous Improvement" text="Deployment, monitoring, and ongoing enhancements."/>
+          </div>
+        </div>
+      </div>
+      </section>
+
+      <section className="container py-12 lg:py-20">
         <div className="flex flex-col gap-12">
           <div className="max-w-3xl">
             <h2 className="font-primary text-3xl lg:text-5xl block font-black text-white text-left">
               Technologies for Scalable Solutions
             </h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="">
               <p className="text-white text-xl font-secondary">
-                Every project starts with a solid foundation. I use reliable
-                tools and proven methodologies to ensure your website performs
-                well, is easy to maintain, and can grow with your business.
+                I build on a modern, performance-first stack designed for speed, scalability and long-term maintainability.
               </p>
               <br></br>
               <p className="text-white text-xl font-secondary">
@@ -121,12 +116,11 @@ export default async function Home() {
                 flexibility using leading builders like Elementor and others.
               </p>
             </div>
-            <div className="md:col-span-2">
               <TechStack />
-            </div>
           </div>
         </div>
-      </div>
+      </section>
+      
       <ContactBanner />
     </>
   );

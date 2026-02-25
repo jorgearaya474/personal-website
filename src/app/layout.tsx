@@ -65,7 +65,7 @@ export default function RootLayout({
         <Analytics />
       </head>
       <body
-        className={`${primary.variable} ${secondary.variable} font-opensans antialiased bg-zinc-900`}
+        className={`${primary.variable} ${secondary.variable} font-opensans antialiased bg-background`}
       >
         <Header />
         {children}

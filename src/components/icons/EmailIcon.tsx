@@ -1,7 +1,7 @@
 const EmailIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="w-6 h-6 fill-slate-400 hover:fill-teal-400"
+    className="w-6 h-6 fill-primary hover:fill-accent"
     viewBox="0 0 16 16"
   >
     <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671" />
