@@ -11,8 +11,8 @@ const ItemCardProject: React.FC<ToolProps> = ({
   description,
 }) => {
   return (
-    <div className="bg-zinc-800/60 rounded-xl overflow-hidden shadow-lg">
-      <div className="flex flex-col items-start justify-between h-full gap-4 px-6 py-6">
+    <div className="bg-surface rounded-xl overflow-hidden shadow-lg">
+      <div className="flex flex-col items-start justify-between h-full gap-8 px-6 py-6">
         <div className="flex flex-col gap-3">
           <Link
             href={url}
@@ -27,12 +27,12 @@ const ItemCardProject: React.FC<ToolProps> = ({
               alt={title}
             ></Image>
           </Link>
-          <h3 className="font-primary font-bold text-2xl hover:text-teal-400 transition-colors duration-300">
+          <h3 className="font-primary font-bold text-2xl hover:text-accent transition-colors duration-300">
             <Link href={url} target="_blank">
               {title}
             </Link>
           </h3>
-          <p className="text-white font-secondary text-base">{description}</p>
+          <p>{description}</p>
         </div>
         <div>
           <CtaButton
@@ -40,7 +40,7 @@ const ItemCardProject: React.FC<ToolProps> = ({
             target="_blank"
             title={title}
             text="Try It Now"
-            className="font-medium shrink-0 w-auto inline-flex"
+            className="shrink-0 w-auto inline-flex"
           />
         </div>
       </div>

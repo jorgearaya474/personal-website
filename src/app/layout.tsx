@@ -18,13 +18,40 @@ const secondary = Barlow({
 });
 
 export const metadata = {
-  title: "Jorge Araya | Jorge Araya Web Developer",
+  title: "Jorge Araya | jorgearaya.com",
   description:
     "I'm Jorge Araya, a web developer specializing in WordPress, Next.js & Laravel. Explore my work and services to boost your digital presence.",
+
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180" },
+    ],
+  },
+
+  manifest: "/site.webmanifest",
+
+  appleWebApp: {
+    title: "Jorge Araya",
+  },
+  openGraph: {
+    title: "Jorge Araya – Web Developer",
+    description:
+      "I'm Jorge Araya, a web developer specializing in WordPress, Next.js & Laravel.",
+    url: "https://jorgearaya.com",
+    siteName: "Jorge Araya",
+    images: [
+      {
+        url: "https://jorgearaya.com/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
   },
 };
 
@@ -37,18 +64,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Open Graph Meta Tags */}
-        <meta property="og:title" content="Jorge Araya – Web Developer" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://jorgearaya.com/og-image.png"
-        />
-        <meta property="og:url" content="https://jorgearaya.com/" />
-        <meta
-          property="og:description"
-          content="I'm Jorge Araya, a web developer specializing in WordPress, Next.js & Laravel. Explore my work and services to boost your digital presence."
-        />
         {/* Google Analytics */}
         <Script
           strategy="afterInteractive"

@@ -3,7 +3,7 @@ import { IconProps } from "@/types/types";
 const CheckMarkIcon = ({ className }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className={`fill-teal-400 ${className}`}
+    className={`fill-accent ${className}`}
     version="1.1"
     width="512"
     height="512"

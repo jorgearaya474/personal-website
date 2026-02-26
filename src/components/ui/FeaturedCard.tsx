@@ -17,8 +17,8 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
       <div className="flex flex-col gap-4 justify-start items-start mb-2">
         {icon}
         <h3>{heading}</h3>
+        <p>{text}</p>
       </div>
-      <p>{text}</p>
     </div>
   );
 };

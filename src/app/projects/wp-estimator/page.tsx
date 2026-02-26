@@ -2,7 +2,7 @@ import WPEstimator from "@/components/projects/WPEstimator";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "WordPress Project Time Estimator | Jorge Araya Web Developer",
+  title: "WordPress Project Time Estimator | jorgearaya.com",
   description:
     "Quickly estimate how long your next WordPress website will take to build. Use this interactive tool to plan timelines and set expectations with ease.",
   keywords: [

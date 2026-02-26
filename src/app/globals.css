@@ -58,5 +58,23 @@ body {
 		60px 60px,
 		100% 100%,
 		100% 100%;
+}
 
+.gradient-bg-alt {
+	background:
+		/* grid */
+		linear-gradient(rgba(130, 133, 255, 0.06) 1px, transparent 1px),
+		linear-gradient(to right, rgba(130, 133, 255, 0.06) 1px, transparent 1px),
+
+		/* mesh */
+		radial-gradient(at 50% 0%, #312e81 0%, transparent 60%),
+
+		/* base */
+		var(--background);
+
+	background-size:
+		60px 60px,
+		60px 60px,
+		100% 100%,
+		100% 100%;
 }
