@@ -13,23 +13,21 @@ export const metadata = {
 export default function Contact() {
 	return (
 		<>
-			<HeroSection heading="Get in Touch" className="" />
+			<HeroSection heading="Let’s connect" className="" />
 			<div className="container py-8 lg:py-24">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 					<div>
-						<h2 className="mb-6">Let’s connect</h2>
-
-						<p className="mb-4 text-lg leading-relaxed text-justify">
+						<p className="mb-4">
 							If you have something in mind — an idea, a project, or even just a question —
 							I’d be happy to hear about it.
 						</p>
 
-						<p className="mb-4 text-lg leading-relaxed text-justify">
+						<p className="mb-4">
 							I believe good work starts with a good conversation. Understanding the context,
 							the goals, and what truly matters before writing a single line of code.
 						</p>
 
-						<p className="mb-6 text-lg leading-relaxed text-justify">
+						<p className="mb-6">
 							Whether you’re looking for a long-term collaboration or simply exploring possibilities,
 							feel free to reach out.
 						</p>
@@ -37,18 +35,18 @@ export default function Contact() {
 						<div className="my-8 p-6 rounded-lg bg-surface">
 							<h3 className="mb-3">What you can expect</h3>
 							<ul className="space-y-3">
-								<li className="flex gap-2 items-center">
-									<CheckMarkIcon className="w-5 h-5" />
+								<li className="flex gap-2 items-start md:items-center">
+									<CheckMarkIcon className="w-5 h-5 shrink-0 mt-[1px] md:mt-0" />
 									Clear and direct communication.
 								</li>
 
-								<li className="flex gap-2 items-center">
-									<CheckMarkIcon className="w-5 h-5" />
+								<li className="flex gap-2 items-start md:items-center">
+									<CheckMarkIcon className="w-5 h-5 shrink-0 mt-[1px] md:mt-0" />
 									Thoughtful, well-structured development.
 								</li>
 
-								<li className="flex gap-2 items-center">
-									<CheckMarkIcon className="w-5 h-5" />
+								<li className="flex gap-2 items-start md:items-center">
+									<CheckMarkIcon className="w-5 h-5 shrink-0 mt-[1px] md:mt-0" />
 									A collaborative and transparent process.
 								</li>
 							</ul>
