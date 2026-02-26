@@ -5,7 +5,7 @@ import { ToolProps } from "@/types/types";
 import ContactBanner from "@/components/layout/ContactBanner";
 
 export const metadata: Metadata = {
-  title: "Tools | Jorge Araya Web Developer",
+  title: "Tools | jorgearaya.com",
   description:
     "Explore a curated collection of developer tools designed to streamline your WordPress projects. Built to save you time and boost productivity.",
   keywords: [

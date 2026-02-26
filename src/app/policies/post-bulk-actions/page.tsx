@@ -4,7 +4,7 @@ export default function PolicyPage() {
   return (
     <>
       <HeroSection heading="Privacy Policy – Post Bulk Actions" className="" />
-      <div className="container pb-8 lg:pb-[10rem]">
+      <div className="container py-8 lg:py-24]">
         <div className="flex flex-col">
           <div className="font-secondary">
             <p className="text-sm text-white mb-6">

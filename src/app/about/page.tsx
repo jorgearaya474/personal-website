@@ -1,62 +1,56 @@
 import HeroSection from "@/components/layout/HeroSection";
-import ImageGallery from "@/components/ui/ImageGallery";
-import { ImageItem } from "@/types/types";
+import Image from "next/image";
 import ContactBanner from "@/components/layout/ContactBanner";
 
 export const metadata = {
-  title: "About me | Jorge Araya Web Developer",
+  title: "About me | jorgearaya.com",
   description:
-    "I'm Jorge Araya, a passionate web developer with years of experience building dynamic, user-friendly websites. With expertise in WordPress, Laravel, and modern front-end frameworks, I help businesses and individuals create impactful digital solutions.",
+    "A web developer focused on thoughtful, well-crafted digital experiences. I value clarity, structure, and building things that last.",
   keywords: ["wordpress developer", "web developer", "web costa rica"],
 };
-
-const images: ImageItem[] = [
-  {
-    src: "/images/jorge-araya-profile-picture-wp.webp",
-    alt: "Jorge Araya",
-  },
-  {
-    src: "/images/20220123_130852-01.webp",
-    alt: "Jorge Araya Hiking",
-  },
-  {
-    src: "/images/20220421_130922.webp",
-    alt: "Jorge Araya Traveling",
-  },
-];
 
 export default function About() {
   return (
     <>
       <HeroSection heading="About me" className="" />
-      <div className="container pb-8 lg:pb-[10rem]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="font-secondary">
-            <p className="text-white text-xl mb-3 text-justify">
-              I’m a web developer from Costa Rica 🇨🇷 with a passion for crafting
-              intuitive and engaging websites. With over eight years of
-              experience in the industry, I’ve had the chance to work on a wide
-              range of projects — from custom WordPress builds to modern web
-              apps using React, NextJS, and Laravel.
+      <div className="container py-8 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div>
+            <p className="mb-3">
+              I’m Jorge, a web developer from Costa Rica 🇨🇷 who genuinely enjoys building things with care.
+              For more than eight years, I’ve been working on the web — not just writing code, but creating digital spaces that feel clear, intentional, and well-crafted.
             </p>
-            <p className="text-white text-xl mb-3 text-justify">
-              This diverse background has helped me develop a strong, adaptable
-              skill set and a love for solving problems through clean,
-              thoughtful code.
+
+            <p className="mb-3">
+              Over time, I’ve learned that good work isn’t about using the newest tools — it’s about paying attention. Listening carefully, understanding what really matters, and making thoughtful decisions that stand the test of time.
             </p>
-            <p className="text-white text-xl mb-3 leading-8 text-justify">
-              I enjoy staying up to date with the latest technologies and
-              trends, always looking for new things to learn and new challenges
-              to tackle. I’m excited to keep growing and see where this journey
-              takes me.
+
+            <p className="mb-3">
+              I value simplicity, structure, and doing things the right way. I enjoy refining the small details, solving quiet problems, and building systems that feel solid and dependable.
             </p>
-            <p className="text-white text-xl mb-2 leading-8 text-justify">
-              Outside the digital world, I’m a nature lover and frequent
-              traveler — exploring the outdoors is one of my greatest joys.
+
+            <p>
+              Outside of work, I’m a nature lover and frequent traveler. Stepping away from the screen helps me reset, reflect, and come back with fresh perspective — something that naturally shapes how I approach every project.
             </p>
           </div>
-          <div>
-            <ImageGallery images={images} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-6">
+            <div className="relative w-full min-h-96">
+              <Image
+                src="/images/IMG_0556.webp"
+                alt="Jorge Traveling"
+                fill
+                className="object-cover rounded-xl"
+              />
+            </div>
+
+            <div className="relative w-full min-h-96">
+              <Image
+                src="/images/IMG_0633.webp"
+                alt="Jorge Working"
+                fill
+                className="object-cover rounded-xl"
+              />
+            </div>
           </div>
         </div>
       </div>

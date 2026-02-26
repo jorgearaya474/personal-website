@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import HeroSection from "@/components/layout/HeroSection";
 
 export const metadata: Metadata = {
-  title: "Blog | Jorge Araya Web Developer",
+  title: "Blog | jorgearaya.com",
   description:
     "Discover insights and expertise in web development on my blog. Join me in exploring the dynamic world of coding, design, and innovation.",
   keywords: ["wordpress developer", "blog", "wordpress insights"],
@@ -17,7 +17,7 @@ export default async function Blog() {
     <>
       <HeroSection heading="Latest Articles" className="" />
       <div className="container pb-12 lg:pb-[10rem]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {posts.map((item) => (
             <ItemCard
               key={item.title}

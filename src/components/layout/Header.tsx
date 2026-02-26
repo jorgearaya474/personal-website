@@ -7,8 +7,7 @@ import CtaButton from "@/components/ui/CtaButton";
 const routesArray = [
   ["Home", "/"],
   ["About", "/about"],
-  ["Projects", "/projects"],
-  ["Works", "/recent-work"],
+  ["Projects", "/recent-work"],
   ["Blog", "/blog"],
   ["Contact", "/contact"],
 ];
