@@ -3,41 +3,60 @@
 @tailwind utilities;
 
 :root {
-    --foreground-rgb: 255, 255, 255;
+	--background: #0B1120;
+	--surface: #111827;
+	--foreground: #FFFFFF;
+	--primary: #E5E7EB;
+	--accent: #8285ff;
+
 }
 
 body {
-    color: rgb(var(--foreground-rgb));
+	background: var(--background);
+	color: var(--foreground);
 }
 
 @layer utilities {
-    .text-balance {
-        text-wrap: balance;
-    }
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+
+@layer base {
+	h1 {
+		@apply font-primary font-black text-5xl md:text-6xl md:!leading-[4.3rem] normal-case;
+	}
+
+  h2 {
+    @apply font-primary text-3xl lg:text-5xl font-black;
+  }
+
+	h3 {
+		@apply font-primary text-3xl font-bold;
+	}
+
+  p {
+    @apply text-xl font-secondary;
+  }
 }
 
 .gradient-bg {
-    background-image:
-        radial-gradient(
-            at 33% 5%,
-            rgb(0 91 79 / 50%) 0,
-            rgba(24, 83, 247, 0) 50%
-        ),
-        radial-gradient(
-            at 66% 21%,
-            rgb(14 152 140 / 32%) 0,
-            rgba(62, 94, 239, 0) 50%
-        );
-}
-.gradient-bg:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    background-image:
-        linear-gradient(rgba(255, 251, 235, 0.015) 0.1em, transparent 0),
-        linear-gradient(90deg, rgba(255, 251, 235, 0.015) 0.1em, transparent 0);
-    background-size: 2.5em 2.5em;
+	background:
+		/* grid */
+		linear-gradient(rgba(130, 133, 255, 0.08) 1px, transparent 1px),
+		linear-gradient(to right, rgba(130, 133, 255, 0.08) 1px, transparent 1px),
+
+		/* mesh */
+		radial-gradient(at 20% 30%, #312e81 0%, transparent 50%),
+		radial-gradient(at 80% 70%, #1e1b4b 0%, transparent 50%),
+
+		/* base */
+		var(--background);
+
+	background-size:
+		60px 60px,
+		60px 60px,
+		100% 100%,
+		100% 100%;
+
 }

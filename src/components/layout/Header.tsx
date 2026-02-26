@@ -10,6 +10,7 @@ const routesArray = [
   ["Projects", "/projects"],
   ["Works", "/recent-work"],
   ["Blog", "/blog"],
+  ["Contact", "/contact"],
 ];
 
 const Header: React.FC = () => {
@@ -61,15 +62,15 @@ const Header: React.FC = () => {
   return (
     <>
       <header
-        className={`${isScrolled ? "backdrop-blur-md bg-zinc-800/40" : "bg-transparent"} fixed w-full top-0 z-50 transition-colors duration-300`}
+        className={`${isScrolled ? "backdrop-blur-md bg-[#111827]/60" : "bg-transparent"} fixed w-full top-0 z-50 transition-colors duration-300`}
       >
         <div className="container mx-auto py-5 md:py-7 lg:py-0">
           <div className="flex gap-x-8 justify-between">
             <div className="flex items-center">
               <Link href={"/"}>
-                <p className="font-primary uppercase font-black text-2xl text-white">
+                <p className="font-primary uppercase font-black text-2xl group hover:text-accent transition-colors duration-300">
                   Jorge
-                  <span className="text-teal-400 hover:text-amber-400 transition-colors duration-300">
+                  <span className="text-accent group-hover:text-foreground transition-colors duration-300">
                     Araya
                   </span>
                   .
@@ -80,7 +81,7 @@ const Header: React.FC = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               data-collapse-toggle="navbar-default"
               type="button"
-              className="inline-flex items-center p-2 w-13 h-13 z-0 justify-center text-sm text-white rounded-lg lg:hidden focus:outline-none focus:text-teal-400"
+              className="inline-flex items-center p-2 w-13 h-13 z-0 justify-center text-sm rounded-lg lg:hidden focus:outline-none focus:text-teal-accent"
               aria-controls="navbar-default"
               aria-expanded={isMenuOpen}
             >
@@ -111,8 +112,8 @@ const Header: React.FC = () => {
                       <Link
                         className={`p-4 block text-xl font-secondary font-medium transition-colors duration-300 ${
                           isActive(path)
-                            ? "text-teal-400 font-bold"
-                            : "text-white hover:text-teal-400"
+                            ? "text-accent font-bold"
+                            : "text-white hover:text-accent"
                         }`}
                         href={path}
                       >
@@ -120,15 +121,6 @@ const Header: React.FC = () => {
                       </Link>
                     </li>
                   ))}
-                  <li>
-                    <CtaButton
-                      text="Get in touch"
-                      href="mailto:jorgearaya474@gmail.com"
-                      target="_self"
-                      title="Get in touch with Jorge"
-                      className=""
-                    />
-                  </li>
                 </ul>
               </nav>
             </div>
@@ -140,11 +132,11 @@ const Header: React.FC = () => {
       <div
         className={`${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } fixed top-0 left-0 w-full h-full bg-zinc-900 p-6 transition-transform duration-300 lg:hidden z-50`}
+        } fixed top-0 left-0 w-full h-full bg-surface p-6 transition-transform duration-300 lg:hidden z-50`}
       >
         <button
           onClick={() => setIsMenuOpen(false)}
-          className="absolute top-4 right-4 text-white text-4xl focus:text-teal-400"
+          className="absolute top-4 right-4 text-white text-4xl focus:text-accent"
         >
           &times;
         </button>
@@ -155,10 +147,10 @@ const Header: React.FC = () => {
                 <li key={name}>
                   <Link
                     href={path}
-                    className={`p-4 block text-xl font-secondary font-medium transition-colors duration-300 ${
+                    className={`py-3 block text-2xl font-secondary font-medium transition-colors duration-300 ${
                       isActive(path)
-                        ? "text-teal-400 font-bold"
-                        : "text-white hover:text-teal-400"
+                        ? "text-accent font-bold"
+                        : "text-white hover:text-accent"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -168,15 +160,6 @@ const Header: React.FC = () => {
               ))}
             </ul>
           </nav>
-          <div className="">
-            <CtaButton
-              text="Get in touch"
-              href="mailto:jorgearaya474@gmail.com"
-              target="_self"
-              title="Get in touch with Jorge"
-              className="block w-full text-center"
-            />
-          </div>
         </div>
       </div>
     </>

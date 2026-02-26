@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        surface: "var(--surface)",
+        primary: "var(--primary)",
+        accent: "var(--accent)",
         peach: "rgb(238, 192, 159)",
       },
       fontFamily: {
