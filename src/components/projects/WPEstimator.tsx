@@ -224,9 +224,9 @@ export default function WPEstimator() {
   return (
     <>
       <HeroSection heading="WordPress Estimator" className="" />
-      <div className="container">
+      <div className="container pb-8 lg:pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="flex flex-col bg-zinc-800 p-8 rounded-lg">
+          <div className="flex flex-col bg-surface p-8 rounded-lg">
             <div className="space-y-4">
               <ToolSectionTitle level={3} title="Site structure" num="1" />
               <div>
@@ -410,10 +410,7 @@ export default function WPEstimator() {
           </div>
         </div>
       </div>
-      <BuyMeCoffeeSection
-        title="Did this tool help you out?"
-        text="Show your support with a coffee, it really makes a difference!"
-      />
+
       <ContactBanner />
     </>
   );

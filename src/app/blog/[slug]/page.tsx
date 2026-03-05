@@ -60,7 +60,7 @@ export default async function Post({
   return (
     <>
       <HeroSection heading={post.title} className="" />
-      <div className="container pb-8 lg:pb-[10rem]">
+      <div className="container pb-8 lg:pb-24">
         <div className="flex flex-col gap-10">
           <div
             className="w-full font-secondary prose prose-h2:font-primary prose-xl prose-invert max-w-full [&_pre]:bg-transparent

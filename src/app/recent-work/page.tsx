@@ -20,7 +20,7 @@ export default async function WorksPage() {
   return (
     <>
       <HeroSection heading="Recent Work" className="" />
-      <div className="container py-12 lg:py-24">
+      <div className="container pb-8 lg:pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {works.map((work) => (
             <WorkItem

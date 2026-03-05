@@ -13,7 +13,7 @@ export default function About() {
   return (
     <>
       <HeroSection heading="About me" className="" />
-      <div className="container py-8 lg:py-24">
+      <div className="container pb-8 lg:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
             <p className="mb-3">
