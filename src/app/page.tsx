@@ -37,7 +37,7 @@ export default async function Home() {
                 I build reliable WordPress websites with clarity, structure, and long-term thinking at their core.
               </p>
               <CtaButton
-                href="#contact"
+                href="/contact"
                 text="Start a Project"
                 title="Contact Jorge"
                 className="w-auto"
