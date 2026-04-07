@@ -1,22 +1,22 @@
 import CtaButton from "@/components/ui/CtaButton";
 import TechStack from "@/components/ui/TechStack";
 import ContactBanner from "@/components/layout/ContactBanner";
-import RocketIcon from "@/components/icons/RocketIcon";
-import ResponsiveIcon from "@/components/icons/ResponsiveIcon";
-import SpeedIcon from "@/components/icons/SpeedIcon";
+import { RocketIcon, ResponsiveIcon, SpeedIcon, CheckMarkIcon } from "@/components/icons";
 import FeaturedCard from "@/components/ui/FeaturedCard";
 import StepCard from "@/components/ui/StepCard";
 
-
 export const metadata = {
-  title: "WordPress Developer Focused on Clean, Scalable Development | jorgearaya.com",
+  title: "Senior WordPress Developer | Custom Themes, ACF Blocks & React | jorgearaya.com",
   description:
-    "WordPress developer focused on clean architecture, thoughtful engineering, and long-term maintainability. I build reliable websites crafted with care.",
+    "Senior WordPress developer with 9+ years building custom themes, ACF Gutenberg blocks, and scalable platforms for agencies and businesses worldwide.",
   keywords: [
-    "wordpress developer",
-    "web developer",
-    "web costa rica",
-    "Wordpress costa rica",
+    "senior wordpress developer",
+    "custom wordpress theme developer",
+    "ACF blocks developer",
+    "gutenberg blocks developer",
+    "wordpress freelance developer",
+    "wordpress developer costa rica",
+    "react tailwind wordpress",
   ],
 };
 
@@ -25,16 +25,16 @@ export default async function Home() {
     <>
       <section className="gradient-bg relative py-32 md:py-0">
         <div className="container relative z-10 pt-16">
-          <div className="flex flex-col items-start justify-center md:min-h-[800px]">
+          <div className="flex flex-col items-start justify-center md:min-h-[620px]">
             <div className="flex flex-col items-start justify-center gap-6 max-w-5xl">
-              <h1 className="">
-                WordPress Developer Focused on Clean, Scalable Builds
-                <span className="text-accent">{' '}crafted with care and built to last
+              <h1>
+                Senior WordPress Developer building custom platforms
+                <span className="text-accent">{' '}that scale
                   <span className="text-white">.</span>
                 </span>
               </h1>
               <p className="font-secondary font-normal text-xl md:text-2xl">
-                I build reliable WordPress websites with clarity, structure, and long-term thinking at their core.
+                I help agencies and growing businesses build fast, scalable WordPress platforms, without technical debt.
               </p>
               <CtaButton
                 href="/contact"
@@ -51,28 +51,22 @@ export default async function Home() {
       <section className="py-12 lg:py-24">
         <div className="container">
           <div className="flex flex-col gap-12">
-            <div className="max-w-3xl">
-              <h2>
-                Thoughtful WordPress Development
-              </h2>
-            </div>
+            <h2 className="max-w-3xl">What I Build</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <FeaturedCard
                 icon={<RocketIcon className="w-12" />}
-                heading="Custom WordPress Engineering"
-                text="Purpose-built themes and systems designed for clarity, stability, and long-term maintainability."
+                heading="Custom Themes & ACF Blocks"
+                text="Hand-crafted WordPress themes and dynamic Gutenberg blocks built with ACF, React and Tailwind — pixel-perfect and built to last."
               />
-
               <FeaturedCard
                 icon={<ResponsiveIcon className="w-12" />}
-                heading="Intentional Design & Structure"
-                text="Well-structured, user-focused layouts that feel natural across devices."
+                heading="Flexible Content Systems"
+                text="Structured, editor-friendly content architectures that scale with your platform and stay easy to manage over time."
               />
-
               <FeaturedCard
                 icon={<SpeedIcon className="w-12" />}
-                heading="Performance & Stability"
-                text="Efficient builds optimized for speed, reliability, and sustainable growth."
+                heading="Performance & Core Web Vitals"
+                text="Optimized builds that score well, load fast, and stay reliable as your traffic and content grow."
               />
             </div>
           </div>
@@ -82,44 +76,60 @@ export default async function Home() {
       <section className="py-12 lg:py-24">
         <div className="container">
           <div className="flex flex-col gap-12">
-            <div className="max-w-3xl">
-              <h2>
-                How I Approach Projects
-              </h2>
-            </div>
+            <h2 className="max-w-3xl">How I Approach Projects</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <StepCard
                 step="1"
                 heading="Understand & Plan"
-                text="Clarify goals, define structure, and establish a solid technical direction."
+                text="I ask the right questions early — goals, constraints, edge cases — so nothing surprises us mid-build."
               />
-
               <StepCard
                 step="2"
                 heading="Build with Precision"
-                text="Clean, well-structured development focused on reliability and performance."
+                text="Clean, documented code built for the developer who maintains it next, not just for today."
               />
-
               <StepCard
                 step="3"
-                heading="Refine & Improve"
-                text="Careful testing, optimization, and thoughtful iteration over time."
+                heading="Test, Iterate & Ship"
+                text="Thorough review cycles before delivery. No surprises at launch, and a codebase ready for whoever touches it next."
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="container py-12 lg:py-24">
-        <div className="flex flex-col gap-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="mb-8">
-                A Modern, Reliable Stack
-              </h2>
-              <p>
-                I work with a carefully selected stack focused on performance, reliability, and long-term maintainability.
-              </p>
+      <section className="py-12 lg:py-24">
+        <div className="container">
+          <div className="flex flex-col gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div>
+                <h2 className="mb-8">A Stack Built to Last</h2>
+                <p>
+                  Every tool I use has a reason. My stack centers on custom WordPress architecture, ACF-powered content systems, and a modern frontend layer built with React and Tailwind — chosen for maintainability and longevity, not trend-chasing.
+                </p>
+              </div>
+              <ul className="space-y-4 text-lg font-medium">
+                <li className="flex gap-3 items-start md:items-center">
+                  <CheckMarkIcon className="w-6 h-6 shrink-0 mt-[1px] md:mt-0" />
+                  Custom Gutenberg blocks built with ACF and Tailwind.
+                </li>
+                <li className="flex gap-3 items-start md:items-center">
+                  <CheckMarkIcon className="w-6 h-6 shrink-0 mt-[1px] md:mt-0" />
+                  Clean PHP architecture — easy to maintain and extend over time.
+                </li>
+                <li className="flex gap-3 items-start md:items-center">
+                  <CheckMarkIcon className="w-6 h-6 shrink-0 mt-[1px] md:mt-0" />
+                  Content systems editors can manage without developer help.
+                </li>
+                <li className="flex gap-3 items-start md:items-center">
+                  <CheckMarkIcon className="w-6 h-6 shrink-0 mt-[1px] md:mt-0" />
+                  Flexible page builder support when needed — without locking you in.
+                </li>
+                <li className="flex gap-3 items-start md:items-center">
+                  <CheckMarkIcon className="w-6 h-6 shrink-0 mt-[1px] md:mt-0" />
+                  Codebases structured for handoff and long-term extension.
+                </li>
+              </ul>
             </div>
             <TechStack />
           </div>

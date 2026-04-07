@@ -1,67 +1,65 @@
 import HeroSection from "@/components/layout/HeroSection";
-import CheckMarkIcon from "@/components/icons/checkMarkIcon";
-import { ImageItem } from "@/types/types";
+import { CheckMarkIcon } from "@/components/icons";
 import ContactForm from "@/components/ui/ContactForm";
 
 export const metadata = {
-	title: "Contact Jorge | jorgearaya.com",
-	description:
-		"Contact Jorge Araya, a web developer focused on thoughtful, well-crafted digital experiences.",
-	keywords: ["contact web developer", "hire developer costa rica", "wordpress expert"],
+  title: "Work With Jorge | Senior WordPress Developer | jorgearaya.com",
+  description:
+    "Looking to hire a senior WordPress developer or expand your agency's capacity? Let's talk about your project.",
+  keywords: [
+    "hire wordpress developer",
+    "wordpress agency partner",
+    "wordpress developer for hire",
+    "wordpress freelance developer",
+    "senior wordpress developer costa rica",
+  ],
 };
 
 export default function Contact() {
-	return (
-		<>
-			<HeroSection heading="Let’s connect" className="" />
-			<div className="container pb-8 lg:pb-24">
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-					<div>
-						<p className="mb-4">
-							If you have something in mind — an idea, a project, or even just a question —
-							I’d be happy to hear about it.
-						</p>
+  return (
+    <>
+      <HeroSection heading="Let's connect" />
+      <section className="container pb-8 lg:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <p className="mb-6">
+              Whether you're an agency looking to expand capacity, a business with a project to
+              build, or just have an idea worth exploring — I'm happy to talk it through. Good
+              work starts with understanding what actually matters before writing a single line of code.
+            </p>
 
-						<p className="mb-4">
-							I believe good work starts with a good conversation. Understanding the context,
-							the goals, and what truly matters before writing a single line of code.
-						</p>
+            <div className="my-8 p-6 rounded-lg bg-surface">
+              <h3 className="mb-3">What you can expect</h3>
+              <ul className="space-y-3">
+                <li className="flex gap-2 items-start md:items-center">
+                  <CheckMarkIcon className="w-5 h-5 shrink-0 mt-[1px] md:mt-0" />
+                  A response within 24 hours.
+                </li>
+                <li className="flex gap-2 items-start md:items-center">
+                  <CheckMarkIcon className="w-5 h-5 shrink-0 mt-[1px] md:mt-0" />
+                  An honest assessment of your project's scope and complexity.
+                </li>
+                <li className="flex gap-2 items-start md:items-center">
+                  <CheckMarkIcon className="w-5 h-5 shrink-0 mt-[1px] md:mt-0" />
+                  Clear communication throughout — no black boxes.
+                </li>
+                <li className="flex gap-2 items-start md:items-center">
+                  <CheckMarkIcon className="w-5 h-5 shrink-0 mt-[1px] md:mt-0" />
+                  Code you or your team can maintain after handoff.
+                </li>
+              </ul>
+            </div>
 
-						<p className="mb-6">
-							Whether you’re looking for a long-term collaboration or simply exploring possibilities,
-							feel free to reach out.
-						</p>
+            <p className="italic">
+              Based in Costa Rica 🇨🇷 — open to working and collaborating worldwide.
+            </p>
+          </div>
 
-						<div className="my-8 p-6 rounded-lg bg-surface">
-							<h3 className="mb-3">What you can expect</h3>
-							<ul className="space-y-3">
-								<li className="flex gap-2 items-start md:items-center">
-									<CheckMarkIcon className="w-5 h-5 shrink-0 mt-[1px] md:mt-0" />
-									Clear and direct communication.
-								</li>
-
-								<li className="flex gap-2 items-start md:items-center">
-									<CheckMarkIcon className="w-5 h-5 shrink-0 mt-[1px] md:mt-0" />
-									Thoughtful, well-structured development.
-								</li>
-
-								<li className="flex gap-2 items-start md:items-center">
-									<CheckMarkIcon className="w-5 h-5 shrink-0 mt-[1px] md:mt-0" />
-									A collaborative and transparent process.
-								</li>
-							</ul>
-						</div>
-
-						<p className="italic">
-							Based in Costa Rica 🇨🇷 — open to working and collaborating worldwide.
-						</p>
-					</div>
-
-					<div>
-						<ContactForm />
-					</div>
-				</div>
-			</div>
-		</>
-	);
+          <div>
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }

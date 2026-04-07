@@ -9,7 +9,7 @@ const postsDirectory = path.join(process.cwd(), "src/content/posts");
 export async function getPosts() {
   const files = await fs.readdir(postsDirectory);
 
-  const projects = await Promise.all(
+  const posts = await Promise.all(
     files
       .filter((file) => path.extname(file) === ".mdx")
       .map(async (file) => {
@@ -29,11 +29,11 @@ export async function getPosts() {
       }),
   );
 
-  projects.sort(
+  posts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
-  return projects;
+  return posts;
 }
 
 // Get all the posts slugs fro static generation

@@ -22,8 +22,7 @@ export default async function Blog() {
           {posts.map((item) => (
             <ItemCard
               key={item.title}
-              slug={item.slug}
-              date={item.date}
+              href={`/blog/${item.slug}`}
               title={item.title}
               tags={item.tags}
               description={item.description}

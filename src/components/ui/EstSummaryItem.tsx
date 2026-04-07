@@ -1,4 +1,4 @@
-import CheckMarkIcon from "../icons/checkMarkIcon";
+import { CheckMarkIcon } from "@/components/icons";
 
 /**
  * Displays a label-value pair with a checkmark icon.

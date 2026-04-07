@@ -1,15 +1,44 @@
-import type { Post } from "@/types/types";
 import CtaButton from "./CtaButton";
 import Link from "next/link";
 import truncateText from "@/lib/truncateText";
+import Image from "next/image";
 
-const ItemCard: React.FC<Post> = ({ slug, title, description, tags }) => {
+interface CardProps {
+  title: string;
+  description: string;
+  href: string;
+  target?: "_blank" | "_self";
+  tags?: string[];
+  image?: string;
+  ctaText?: string;
+}
+
+const ItemCard = ({
+  title,
+  description,
+  href,
+  target,
+  tags,
+  image,
+  ctaText = "Read more",
+}: CardProps) => {
   return (
     <div className="bg-surface rounded-xl overflow-hidden shadow-lg">
       <div className="flex flex-col items-start justify-between h-full gap-8 px-6 py-6">
         <div className="flex flex-col gap-3">
+          {image && (
+            <Link href={href} target={target} className="overflow-hidden rounded-md">
+              <Image
+                src={image}
+                className="rounded-md hover:scale-105 transition-transform duration-300 h-64 object-cover"
+                width={500}
+                height={300}
+                alt={title}
+              />
+            </Link>
+          )}
           <h3 className="hover:text-accent transition-colors duration-300">
-            <Link href={`/blog/${slug}`}>{title}</Link>
+            <Link href={href} target={target}>{title}</Link>
           </h3>
           {tags && (
             <div className="flex gap-2">
@@ -23,15 +52,14 @@ const ItemCard: React.FC<Post> = ({ slug, title, description, tags }) => {
               ))}
             </div>
           )}
-          <p>
-            {truncateText(description)}
-          </p>
+          <p>{image ? description : truncateText(description)}</p>
         </div>
         <div>
           <CtaButton
-            href={`/blog/${slug}`}
+            href={href}
+            target={target}
             title={title}
-            text="Read more"
+            text={ctaText}
             className="shrink-0 w-auto inline-flex"
           />
         </div>

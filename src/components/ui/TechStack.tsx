@@ -1,19 +1,26 @@
 import type { TechSkill } from "@/types/types";
-import WordPressIcon from "@/components/icons/WordPressIcon";
-import PHPIcon from "@/components/icons/PHPIcon";
-import JavaScriptIcon from "@/components/icons/JavaScriptIcon";
-import ReactIcon from "@/components/icons/ReactIcon";
-import NextjsIcon from "@/components/icons/NextjsIcon";
-import TailwindIcon from "@/components/icons/TailwindIcon";
-import SassIcon from "@/components/icons/SassIcon";
-import FigmaIcon from "@/components/icons/FigmaIcon";
-import LaravelIcon from "../icons/LaravelIcon";
+import {
+  WordPressIcon,
+  PHPIcon,
+  JavaScriptIcon,
+  ReactIcon,
+  NextjsIcon,
+  TailwindIcon,
+  SassIcon,
+  FigmaIcon,
+  AcfIcon,
+  AlpineIcon,
+} from "@/components/icons";
 
 const TechStack = () => {
   const technologies: TechSkill[] = [
     {
       name: "WordPress",
       icon: <WordPressIcon />,
+    },
+    {
+      name: "ACF",
+      icon: <AcfIcon />,
     },
     {
       name: "PHP",
@@ -26,6 +33,10 @@ const TechStack = () => {
     {
       name: "React",
       icon: <ReactIcon />,
+    },
+    {
+      name: "Alpine.js",
+      icon: <AlpineIcon />,
     },
     {
       name: "NextJS",
@@ -42,21 +53,17 @@ const TechStack = () => {
     {
       name: "Figma",
       icon: <FigmaIcon />,
-    },
-    {
-      name: "Laravel",
-      icon: <LaravelIcon />,
-    },
+    }
   ];
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
       {technologies.map((tech, index) => (
         <div
-          key={index}
-          className={`flex flex-row items-center justify-center h-20 bg-surface rounded-lg p-4 ${index === technologies.length - 1 ? 'col-span-2 md:col-span-1' : ''}`}
+          key={tech.name}
+          className="flex flex-row items-center justify-center bg-surface rounded-lg p-5 h-full min-h-20 group border border-surface hover:border-accent transition-all duration-300"
         >
-          <div className="mr-2">{tech.icon}</div>
-          <div className="font-primary font-medium">{tech.name}</div>
+          <div className="mr-2 grayscale transition-all duration-300 group-hover:grayscale-0">{tech.icon}</div>
+          <div className="text-lg font-primary font-medium">{tech.name}</div>
         </div>
       ))}
     </div>

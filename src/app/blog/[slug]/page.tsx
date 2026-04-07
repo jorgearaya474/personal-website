@@ -72,10 +72,10 @@ export default async function Post({
               </span>
               <span>|</span>
               <div className="flex gap-2">
-                {post.tags.map((tag: string, index: number) => (
+                {post.tags.map((tag: string) => (
                   <span
                     className="inline-flex items-center rounded-md bg-indigo-400/20 px-2 py-1 text-sm font-secondary font-medium text-accent ring-1 ring-inset ring-indigo-400/10"
-                    key={index}
+                    key={tag}
                   >
                     {tag}
                   </span>

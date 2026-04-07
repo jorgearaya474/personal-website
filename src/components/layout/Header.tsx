@@ -24,16 +24,13 @@ const Header: React.FC = () => {
         setIsScrolled(scrolled);
       };
 
-      if (typeof Window !== "undefined") {
-        window.addEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll);
 
-        // Cleanup function
-        return () => {
-          window.removeEventListener("scroll", handleScroll);
-        };
-      }
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
     },
-    [isScrolled],
+    [],
   );
 
   useEffect(
