@@ -4,6 +4,7 @@ const FigmaIcon = () => (
     viewBox="0 0 128 128"
     className="w-8 h-8"
     fill="#38bdf8"
+    aria-hidden="true"
   >
     <path
       fill="#0acf83"

@@ -1,7 +1,5 @@
 import Link from "next/link";
-import LinkedInIcon from "@/components/icons/LinkedInIcon";
-import GithubIcon from "../icons/GithubIcon";
-import EmailIcon from "../icons/EmailIcon";
+import { LinkedInIcon, GithubIcon, EmailIcon } from "@/components/icons";
 
 const SocialButtons = () => {
   return (

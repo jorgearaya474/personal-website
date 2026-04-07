@@ -30,7 +30,7 @@ interface ImageGalleryProps {
 }
 
 interface IconProps {
-  className: string;
+  className?: string;
 }
 
 interface ToolProps {

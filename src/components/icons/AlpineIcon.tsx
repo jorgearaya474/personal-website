@@ -1,0 +1,8 @@
+const AlpineIcon = () => (
+  <svg viewBox="0 0 128 128" className="w-8 h-8" aria-hidden="true">
+    <path fill="#77c1d2" fillRule="evenodd" clipRule="evenodd" d="M98.444 35.562 126 62.997 98.444 90.432 70.889 62.997z" />
+    <path fill="#2d3441" fillRule="evenodd" clipRule="evenodd" d="m29.556 35.562 57.126 56.876H31.571L2 62.997z" />
+  </svg>
+);
+
+export default AlpineIcon;

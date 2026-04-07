@@ -1,4 +1,4 @@
-import ItemCardProject from "@/components/ui/ItemCardProject";
+import ItemCard from "@/components/ui/ItemCard";
 import type { Metadata } from "next";
 import HeroSection from "@/components/layout/HeroSection";
 import { ToolProps } from "@/types/types";
@@ -40,12 +40,14 @@ export default async function Tools() {
       <div className="container pb-12 lg:pb-[10rem]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {toolsData.map((item) => (
-            <ItemCardProject
+            <ItemCard
               key={item.title}
-              url={item.url}
+              href={item.url}
+              target="_blank"
               title={item.title}
               image={item.image}
               description={item.description}
+              ctaText="Try It Now"
             />
           ))}
         </div>
