@@ -14,7 +14,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ heading, className }) => {
           </h1>
         </div>
       </div>
-      <div className="bg-gradient-to-b from-transparent to-background absolute bottom-0 w-full h-40"></div>
+      <div className="bg-gradient-to-b from-transparent to-background absolute bottom-0 w-full h-10 md:h-20 lg:h-40"></div>
     </section>
   );
 };
