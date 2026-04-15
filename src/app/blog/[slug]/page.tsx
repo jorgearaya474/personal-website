@@ -31,6 +31,9 @@ export async function generateMetadata({
     description:
       post.description ||
       "I'm Jorge Araya, a passionate web developer with years of experience building dynamic, user-friendly websites.",
+    alternates: {
+      canonical: `https://jorgearaya.com/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
