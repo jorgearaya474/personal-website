@@ -26,22 +26,31 @@ export default async function Home() {
       <section className="gradient-bg relative py-32 md:py-0">
         <div className="container relative z-10 pt-16">
           <div className="flex flex-col items-start justify-center md:min-h-[620px]">
-            <div className="flex flex-col items-start justify-center gap-6 max-w-5xl">
+            <div className="flex flex-col items-start justify-center gap-6 max-w-4xl">
               <h1>
-                Senior WordPress Developer building custom platforms
-                <span className="text-accent">{' '}that scale
+                WordPress platforms built to scale,
+                <span className="text-accent">{' '}not to break
                   <span className="text-white">.</span>
                 </span>
               </h1>
               <p className="font-secondary font-normal text-xl md:text-2xl">
-                I help agencies and growing businesses build fast, scalable WordPress platforms, without technical debt.
+                I help agencies and growing businesses build fast, maintainable sites without technical debt, ready to scale and easy to manage.
               </p>
-              <CtaButton
-                href="/contact"
-                text="Start a Project"
-                title="Contact Jorge"
-                className="w-auto"
-              />
+              <div className="flex flex-row gap-4">
+                <CtaButton
+                  href="/contact"
+                  text="Let’s talk"
+                  title="Contact Jorge"
+                  className="w-auto"
+                />
+                <CtaButton
+                  href="/work"
+                  text="See my work"
+                  title="View Jorge’s projects"
+                  variant="secondary"
+                  className="w-auto"
+                />
+              </div>
             </div>
           </div>
         </div>
