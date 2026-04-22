@@ -44,7 +44,7 @@ export default async function Home() {
                   className="w-auto"
                 />
                 <CtaButton
-                  href="/work"
+                  href="/recent-work"
                   text="See my work"
                   title="View Jorge’s projects"
                   variant="secondary"
