@@ -9,7 +9,7 @@ const ContactBanner = () => {
           <div className="flex flex-col gap-8">
             <h2>Let’s Connect</h2>
             <p className="leading-relaxed">
-              Whether you have a project scoped out or just an idea worth exploring, I'm happy to talk it through. No pressure, just a honest conversation.
+              Whether you have a project scoped out or just an idea worth exploring, I'm happy to talk it through. No pressure, just an honest conversation.
             </p>
 
             <div className="pt-6 border-t border-white/10 flex flex-col gap-2 text-md font-secondary">
