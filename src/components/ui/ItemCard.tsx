@@ -37,7 +37,7 @@ const ItemCard = ({
               />
             </Link>
           )}
-          <h3 className="hover:text-accent transition-colors duration-300">
+          <h3 className="text-2xl hover:text-accent transition-colors duration-300">
             <Link href={href} target={target}>{title}</Link>
           </h3>
           {tags && (

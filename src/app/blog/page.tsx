@@ -5,10 +5,22 @@ import HeroSection from "@/components/layout/HeroSection";
 import ContactBanner from "@/components/layout/ContactBanner";
 
 export const metadata: Metadata = {
-  title: "Blog | jorgearaya.com",
+  title: "Blog | WordPress, Next.js & Web Development Articles | jorgearaya.com",
   description:
-    "Discover insights and expertise in web development on my blog. Join me in exploring the dynamic world of coding, design, and innovation.",
-  keywords: ["wordpress developer", "blog", "wordpress insights"],
+    "Web development articles covering WordPress, Next.js, PHP, and modern frontend tooling. Practical guides written by a developer, for developers.",
+  keywords: [
+    "wordpress developer blog",
+    "web development articles",
+    "wordpress tips",
+    "next.js tutorials",
+    "php development",
+    "wordpress guides",
+    "frontend development",
+    "developer insights",
+  ],
+  alternates: {
+    canonical: "https://jorgearaya.com/blog",
+  },
 };
 
 export default async function Blog() {

@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row items-start justify-between gap-10">
 
           <div className="font-secondary text-lg text-center md:text-left">
-            © {currentYear} — Crafted with ☕ by me
+            © {currentYear} Jorge Araya. Built by hand, fueled by coffee.
           </div>
 
           <div className="grid grid-cols-2 gap-8">
@@ -37,12 +37,12 @@ const Footer: React.FC = () => {
             <nav>
               <ul className="flex flex-col gap-4 text-md font-secondary tracking-wide">
                 <li>
-                  <Link href="https://linkedin.com/in/jorgearayadev" target="_blank" className="hover:text-accent transition">
+                  <Link href="https://linkedin.com/in/jorgearayadev" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition">
                     LinkedIn
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://github.com/jorgearaya474" target="_blank" className="hover:text-accent transition">
+                  <Link href="https://github.com/jorgearaya474" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition">
                     GitHub
                   </Link>
                 </li>

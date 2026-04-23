@@ -14,7 +14,7 @@ const WorkItem: React.FC<WorkProps> = ({
       {/* Image + overlay */}
       <div className="relative overflow-hidden rounded-t-xl sm:rounded-xl">
         <Image
-          className="w-full h-full object-cover"
+          className="w-full h-26 md:h-48 lg:h-64 object-cover object-left-top"
           src={image}
           alt={title}
           width={400}
