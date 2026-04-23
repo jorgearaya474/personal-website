@@ -5,15 +5,20 @@ import { ToolProps } from "@/types/types";
 import ContactBanner from "@/components/layout/ContactBanner";
 
 export const metadata: Metadata = {
-  title: "Tools | jorgearaya.com",
+  title: "Side Projects & Tools | WordPress Developer | jorgearaya.com",
   description:
-    "Explore a curated collection of developer tools designed to streamline your WordPress projects. Built to save you time and boost productivity.",
+    "Free tools and side projects built for WordPress developers. A time estimator and a Chrome extension to speed up your workflow.",
   keywords: [
-    "wordpress tools",
-    "web development tools",
-    "developer productivity",
-    "jorge araya tools",
+    "wordpress developer tools",
+    "wordpress time estimator",
+    "wordpress project calculator",
+    "wordpress chrome extension",
+    "developer productivity tools",
+    "jorge araya projects",
   ],
+  alternates: {
+    canonical: "https://jorgearaya.com/projects",
+  },
 };
 
 const toolsData: ToolProps[] = [

@@ -4,10 +4,10 @@ import WorkItem from "@/components/ui/WorkItem";
 import ContactBanner from "@/components/layout/ContactBanner";
 
 export const metadata = {
-  title: "Recent Work | jorgearaya.com",
+  title: "Work | jorgearaya.com",
   description:
-    "Explore my portfolio as a skilled web developer. Dive into a collection of meticulously crafted projects that showcase creativity, functionality, and innovation. Witness the power of code turned into captivating digital experiences.",
-  keywords: ["wordpress development", "react", "web development portfolio"],
+    "A selection of projects built through agency partnerships, covering custom WordPress themes, ACF blocks, and content systems.",
+  keywords: ["wordpress development", "web development portfolio"],
   robots: {
     index: false,
     follow: false,
@@ -19,8 +19,11 @@ export default async function WorksPage() {
 
   return (
     <>
-      <HeroSection heading="Recent Work" className="" />
+      <HeroSection heading="Work" className="" />
       <div className="container pb-8 lg:pb-24">
+        <p className="max-w-4xl mb-12">
+          A selection of projects built independently and in collaboration with agencies, often in a white-label capacity. I focus on custom WordPress development and flexible content systems, building sites that remain easy to manage, extend, and maintain over time.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {works.map((work) => (
             <WorkItem

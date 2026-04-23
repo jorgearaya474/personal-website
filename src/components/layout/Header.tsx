@@ -7,7 +7,7 @@ import CtaButton from "@/components/ui/CtaButton";
 const routesArray = [
   ["Home", "/"],
   ["About", "/about"],
-  ["Projects", "/recent-work"],
+  ["Work", "/recent-work"],
   ["Blog", "/blog"],
   ["Contact", "/contact"],
 ];
@@ -112,6 +112,7 @@ const Header: React.FC = () => {
                             : "text-white hover:text-accent"
                         }`}
                         href={path}
+                        aria-current={isActive(path) ? "page" : undefined}
                       >
                         {name}
                       </Link>
@@ -149,6 +150,7 @@ const Header: React.FC = () => {
                         : "text-white hover:text-accent"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
+                    aria-current={isActive(path) ? "page" : undefined}
                   >
                     {name}
                   </Link>

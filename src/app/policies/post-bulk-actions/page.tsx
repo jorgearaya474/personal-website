@@ -1,9 +1,20 @@
 import HeroSection from "@/components/layout/HeroSection";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy: Post Bulk Actions Chrome Extension | jorgearaya.com",
+  description:
+    "Privacy policy for the Post Bulk Actions Chrome extension. No personal data is collected, stored, or transmitted. Learn about permissions and data handling.",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function PolicyPage() {
   return (
     <>
-      <HeroSection heading="Privacy Policy – Post Bulk Actions" className="" />
+      <HeroSection heading="Privacy Policy: Post Bulk Actions" className="" />
       <div className="container py-8 lg:py-24]">
         <div className="flex flex-col">
           <div className="font-secondary">

@@ -5,7 +5,7 @@ description: "Learn how to render inline SVG icons in WordPress using a custom f
 tags: "WordPress, PHP"
 ---
 
-SVG icons are lightweight, scalable, and easy to style with CSS. But by default, many WordPress themes and plugins load SVGs as `<img>` tags or background images — which limits styling and accessibility.
+SVG icons are lightweight, scalable, and easy to style with CSS. But by default, many WordPress themes and plugins load SVGs as `<img>` tags or background images, which limits styling and accessibility.
 
 In this post, I'll show you how to render SVG icons with a custom function into your WordPress templates, allowing full control over their appearance and behavior.
 
@@ -89,7 +89,7 @@ $defaults = [
 $args = wp_parse_args($args, $defaults);
 ```
 
-We start by defining default attributes for the SVG — such as class, width, and height. The `wp_parse_args()` function merges the defaults with any custom attributes you pass when calling `theme_get_svg()`.
+We start by defining default attributes for the SVG: class, width, and height. The `wp_parse_args()` function merges the defaults with any custom attributes you pass when calling `theme_get_svg()`.
 
 👉 This makes the function flexible: you can override only what you need.
 
@@ -179,11 +179,11 @@ echo theme_get_svg(
 
 ## Conclusion
 
-Rendering SVG icons directly as inline code in WordPress gives you full control over styling, accessibility, and performance — without relying on external libraries or icon fonts.
+Rendering SVG icons directly as inline code in WordPress gives you full control over styling, accessibility, and performance, without relying on external libraries or icon fonts.
 
 With this function, you can streamline your workflow, improve page speed, and build a more maintainable front-end. Whether you're working on a custom theme or a client project, this approach keeps your codebase clean and flexible.
 
-Feel free to tweak the function to suit your needs — and if you found this useful, consider sharing it with fellow developers!
+Feel free to tweak the function to suit your needs. And if you found this useful, consider sharing it with fellow developers!
 
 Want to grab the full code? Check out the complete function on GitHub Gist:
 

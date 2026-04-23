@@ -1,0 +1,71 @@
+---
+title: "Your WordPress Site Is Hard to Edit Because It Was Built for Developers, Not Editors"
+date: "2026-04-21"
+description: "If every layout change requires a developer, the problem isn't the content team. It's the architecture."
+tags: "WordPress, ACF, Gutenberg"
+---
+
+You launch the site. It looks great. The client is happy.
+
+Three months later, they need to add a new section to a service page. Simple request. Except it takes a developer two hours to do it because the layout is hardcoded into a template.
+
+That's not a bug. That's an architecture problem.
+
+## The Real Problem With Rigid Templates
+
+A common WordPress pattern: build a custom template for each page type, attach an ACF field group to it, and let editors fill in the fields.
+
+It works. The content is structured, the design is consistent, and the developer has full control.
+
+The problem is that last part. The developer has full control, which means the editor has almost none.
+
+Every page type has a fixed layout. FAQs always go in the same spot. The CTA is always at the bottom. If the client wants to try a different order, or add a section that wasn't planned for, someone has to touch code.
+
+The site is structured around what the developer built, not around what the business needs.
+
+## A Different Way to Think About It
+
+The shift is not technical. It's conceptual.
+
+Instead of asking "what fields does this page need?", the question becomes "what building blocks does this page need access to?"
+
+That changes everything. Instead of a template that defines the layout, you give editors a set of blocks they can arrange however they need. Hero, FAQ, testimonials, CTA, rich text. Each one self-contained, each one flexible enough to work in different contexts.
+
+The editor decides the order. The block handles the design.
+
+## What This Looks Like in Practice
+
+On a project I worked on, the original site was built around ACF field groups tied to page templates. Each page type had its own template, its own fields, its own logic. It was consistent, but completely locked.
+
+If the marketing team wanted to move the FAQ section above the CTA on one specific page, that was a developer task. If they wanted to test a different layout for a landing page, same story. The structure that was supposed to make things easier had become the bottleneck.
+
+The rebuild flipped the approach. Instead of templates with fixed fields, the site was rebuilt using ACF blocks registered for the Gutenberg editor. Each block handled one thing: a hero section, a content row, an FAQ accordion, a CTA banner.
+
+The result: editors could build pages by stacking blocks in whatever order made sense for that piece of content. FAQ before CTA? Fine. CTA at the top and bottom? Also fine. A landing page with a completely different structure than the standard service page? No developer needed.
+
+The site stayed visually consistent because the blocks enforced the design system. But the layout decisions moved from the codebase to the editor.
+
+## What Makes a Block Actually Editor-Friendly
+
+Not all blocks are created equal. A block that exposes 40 options is just a different kind of rigid, because editors spend more time configuring than building.
+
+The goal is the right amount of flexibility. Enough options to handle real content variation, not so many that the block becomes its own learning curve.
+
+In practice that means:
+
+- Layout variants handled by a simple select field, not manual spacing controls
+- Color and style options limited to what the design system actually supports
+- Fields labeled for content people, not developers ("Button text" not "CTA label copy")
+- Sensible defaults so a block works out of the box without configuration
+
+The editor should be able to drop a block, fill in the content, and move on. If they need to read documentation to use it, the block is too complex.
+
+If you're curious about the specific tools I use to build these blocks, I wrote about my go-to WordPress stack [in this post](/blog/wordpress-stack-i-keep-reaching-for).
+
+## The Real Test
+
+A well-built WordPress site doesn't need a developer for routine content work. If every layout change, every new section, every page restructure goes through a developer, the site is working against the business instead of for it.
+
+The fix isn't more plugins or a different page builder. It's building with editors in mind from the start, at the architecture level.
+
+That's the difference between a site that's delivered and a site that's actually usable.

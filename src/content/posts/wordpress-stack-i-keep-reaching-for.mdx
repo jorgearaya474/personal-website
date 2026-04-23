@@ -1,0 +1,98 @@
+---
+title: "The WordPress Stack I Keep Reaching For"
+date: "2026-04-14"
+description: "Why _tw, ACF, Tailwind, and Alpine.js have become my go-to combination for most WordPress projects."
+tags: "WordPress, Themes, ACF"
+---
+
+Over the past few years I've worked with a good mix of WordPress setups. Traditional starter themes, page builders, and more recently some FSE experiments. Each approach solves a different problem, and I still think they all have their place depending on the type of project and the team behind it.
+
+That said, there’s one combination I keep coming back to more often than not:
+
+- [**\_tw**](https://underscoretw.com/) as the base theme
+- **ACF** with custom blocks
+- **Tailwind CSS**
+- **Alpine.js**
+
+Not because it's the "best" option in every case, but because it consistently hits a sweet spot between flexibility, performance, and development speed. It’s one of those setups that just feels reliable once you’ve used it a few times.
+
+## What most of my projects actually need
+
+The projects I typically work on don’t call for a heavy frontend framework or a fully visual editing experience. Most of them are marketing sites, content-driven builds, or custom client work where clarity and maintainability matter more than flashy tooling.
+
+What they really need is:
+
+- Clean, maintainable code that won't become a headache six months later
+- Fast load times without needing constant optimization workarounds
+- A structured editing experience that keeps content editors productive without giving them enough freedom to accidentally break things
+
+This stack fits that space really well. It gives me control as a developer while still delivering a solid experience for whoever is managing the content later on.
+
+## How the pieces work together
+
+What I value most about this combination isn’t any single tool. It’s how they complement each other and reduce friction across the whole development process.
+
+### \_tw as the foundation
+
+[\_tw](https://underscoretw.com/) gives me a clean starting point without imposing too many opinions. Instead of spending the first hour of a project removing things I don’t need, I can focus on shaping the theme around the project requirements from the start.
+
+It also comes with Tailwind already configured, which removes a lot of setup overhead and makes the initial development phase feel almost immediate.
+
+### ACF Blocks for content structure
+
+This is where most of the architecture lives. I define blocks that give clients clear, structured fields to work with. No guessing where things go. No accidentally breaking layouts by dragging elements around or mixing components in unintended ways.
+
+In practice, this means:
+- more predictable layouts  
+- fewer support requests  
+- and a smoother handoff once the project is live  
+
+The editing experience ends up feeling intentional. Flexible enough to cover real use cases, but constrained enough to keep everything consistent across pages.
+
+### Tailwind for fast, predictable styling
+
+When every block is treated as its own component, Tailwind makes styling feel almost mechanical (in a good way). I’m not spending time naming classes or dealing with specificity issues. I’m just building.
+
+Over time, this also helps keep styles more consistent across the project. There’s less drift, less duplication, and fewer surprises when revisiting older code.
+
+Paired with the _tw setup, the workflow barely needs any CSS configuration out of the box.
+
+### Alpine.js for just enough interactivity
+
+Toggles, dropdowns, tabs, mobile menus, conditional visibility. Alpine handles all of it with a few attributes directly in the markup.
+
+No build step. No component hierarchy. No state management overhead.
+
+For the level of interactivity most marketing sites and corporate pages need, this approach keeps things simple and easy to maintain without sacrificing functionality.
+
+## When I reach for something else
+
+I don’t default to this stack on every project. There are clear cases where it’s not the right fit, and forcing it would only make things harder.
+
+For example:
+
+- **App-like projects** that need complex state management or real-time interactions
+- **Teams already committed to React, Vue, or similar ecosystems**, where consistency matters more than personal preference
+- **Projects where full visual editing is a hard requirement**, and the client expects to control layout more freely
+
+In those situations, I’ll switch to whatever makes the most sense. The goal is always to pick the right tool for the job, not to stick to a single stack out of habit.
+
+## Why it keeps earning its spot
+
+Even with all the alternatives out there, like headless setups, block-based builders, and full JavaScript frameworks, I keep reaching for this stack because it consistently delivers where it matters.
+
+It lets me:
+
+- **Ship faster** without cutting corners on structure  
+- **Hand off confidently**, knowing the codebase will still make sense later  
+- **Avoid unnecessary complexity** that doesn’t add real value to the project  
+
+It’s predictable in the best way. I know how it behaves, how it scales, and what to expect when coming back to a project months later. That kind of reliability is hard to overstate in real-world work.
+
+## What's next
+
+This isn’t a fixed rule. It’s just a current favorite.
+
+I’m always experimenting with new approaches, especially as WordPress continues to evolve. If a better setup comes along for this type of project, I’m more than open to switching things up.
+
+But for now, [\_tw](https://underscoretw.com/) + ACF + Tailwind + Alpine keeps proving itself, project after project.
