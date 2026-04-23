@@ -25,30 +25,46 @@ export async function getPosts() {
           description: data.description,
           image: data.image,
           tags: data.tags ? data.tags.split(",") : [],
+          draft: data.draft ?? false,
         } as Post;
       }),
   );
 
-  posts.sort(
+  const published = posts.filter((p) => !p.draft);
+
+  published.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
-  return posts;
+  return published;
 }
 
-// Get all the posts slugs fro static generation
+// Get all the posts slugs for static generation (excludes drafts)
 export async function getAllPostSlugs() {
   try {
     const files = await fs.readdir(postsDirectory);
-    return files
-      .filter((file) => path.extname(file) === ".mdx")
-      .map((file) => ({
-        slug: path.basename(file, ".mdx"),
-      }));
-  } catch (error) {
-    console.error("Error reading the posts directory: ", error);
+    const slugs = await Promise.all(
+      files
+        .filter((file) => path.extname(file) === ".mdx")
+        .map(async (file) => {
+          const source = await fs.readFile(path.join(postsDirectory, file), "utf8");
+          const { data } = matter(source);
+          if (data.draft) return null;
+          return { slug: path.basename(file, ".mdx") };
+        }),
+    );
+    return slugs.filter(Boolean) as { slug: string }[];
+  } catch {
     return [];
   }
+}
+
+// Get related posts by shared tags, excluding current slug
+export async function getRelatedPosts(slug: string, tags: string[], limit = 2) {
+  const all = await getPosts();
+  return all
+    .filter((p) => p.slug !== slug)// skip current post
+    .slice(0, limit);
 }
 
 // Get single post by slug
@@ -65,10 +81,10 @@ export async function getPostBySlug(slug: string) {
       date: data.date,
       description: data.description,
       tags: data.tags ? data.tags.split(",") : [],
+      videoUrl: data.videoUrl ?? null,
       content,
     };
-  } catch (error) {
-    console.error(`Error loading post "${slug}":`, error);
+  } catch {
     return null;
   }
 }

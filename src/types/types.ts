@@ -18,6 +18,7 @@ interface Post {
   date: string;
   description: string;
   tags: string[];
+  draft?: boolean;
 }
 
 interface ImageItem {

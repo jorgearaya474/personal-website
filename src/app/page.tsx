@@ -18,11 +18,34 @@ export const metadata = {
     "wordpress developer costa rica",
     "react tailwind wordpress",
   ],
+  alternates: {
+    canonical: "https://jorgearaya.com",
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Jorge Araya",
+  url: "https://jorgearaya.com",
+  jobTitle: "Senior WordPress Developer",
+  sameAs: [
+    "https://linkedin.com/in/jorgearayadev",
+    "https://github.com/jorgearaya474",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "CR",
+  },
 };
 
 export default async function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <section className="gradient-bg relative py-32 md:py-0">
         <div className="container relative z-10 pt-16">
           <div className="flex flex-col items-start justify-center md:min-h-[620px]">
@@ -65,7 +88,7 @@ export default async function Home() {
               <FeaturedCard
                 icon={<RocketIcon className="w-12" />}
                 heading="Custom Themes & ACF Blocks"
-                text="Hand-crafted WordPress themes and dynamic Gutenberg blocks built with ACF, React and Tailwind — pixel-perfect and built to last."
+                text="Hand-crafted WordPress themes and dynamic Gutenberg blocks built with ACF, React and Tailwind, pixel-perfect and built to last."
               />
               <FeaturedCard
                 icon={<ResponsiveIcon className="w-12" />}
@@ -90,7 +113,7 @@ export default async function Home() {
               <StepCard
                 step="1"
                 heading="Understand & Plan"
-                text="I ask the right questions early — goals, constraints, edge cases — so nothing surprises us mid-build."
+                text="I ask the right questions early (goals, constraints, edge cases) so nothing surprises us mid-build."
               />
               <StepCard
                 step="2"
@@ -114,7 +137,7 @@ export default async function Home() {
               <div>
                 <h2 className="mb-8">A Stack Built to Last</h2>
                 <p>
-                  Every tool I use has a reason. My stack centers on custom WordPress architecture, ACF-powered content systems, and a modern frontend layer built with React and Tailwind — chosen for maintainability and longevity, not trend-chasing.
+                  Every tool I use has a reason. My stack centers on custom WordPress architecture, ACF-powered content systems, and a modern frontend layer built with React and Tailwind, chosen for maintainability and longevity, not trend-chasing.
                 </p>
               </div>
               <ul className="space-y-4 text-lg font-medium">
@@ -124,7 +147,7 @@ export default async function Home() {
                 </li>
                 <li className="flex gap-3 items-start md:items-center">
                   <CheckMarkIcon className="w-6 h-6 shrink-0 mt-[1px] md:mt-0" />
-                  Clean PHP architecture — easy to maintain and extend over time.
+                  Clean PHP architecture, easy to maintain and extend over time.
                 </li>
                 <li className="flex gap-3 items-start md:items-center">
                   <CheckMarkIcon className="w-6 h-6 shrink-0 mt-[1px] md:mt-0" />
@@ -132,7 +155,7 @@ export default async function Home() {
                 </li>
                 <li className="flex gap-3 items-start md:items-center">
                   <CheckMarkIcon className="w-6 h-6 shrink-0 mt-[1px] md:mt-0" />
-                  Flexible page builder support when needed — without locking you in.
+                  Flexible page builder support when needed, without locking you in.
                 </li>
                 <li className="flex gap-3 items-start md:items-center">
                   <CheckMarkIcon className="w-6 h-6 shrink-0 mt-[1px] md:mt-0" />

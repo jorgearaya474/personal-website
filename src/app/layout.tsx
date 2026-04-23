@@ -18,6 +18,7 @@ const secondary = Barlow({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://jorgearaya.com"),
   title: "Jorge Araya | jorgearaya.com",
   description:
     "I'm Jorge Araya, a web developer specializing in WordPress, Next.js & Laravel. Explore my work and services to boost your digital presence.",
@@ -39,7 +40,7 @@ export const metadata = {
     title: "Jorge Araya",
   },
   openGraph: {
-    title: "Jorge Araya – Web Developer",
+    title: "Jorge Araya | Web Developer",
     description:
       "I'm Jorge Araya, a web developer specializing in WordPress, Next.js & Laravel.",
     url: "https://jorgearaya.com",
@@ -52,6 +53,13 @@ export const metadata = {
       },
     ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jorge Araya | Web Developer",
+    description:
+      "I'm Jorge Araya, a web developer specializing in WordPress, Next.js & Laravel.",
+    images: ["https://jorgearaya.com/og-image.png"],
   },
 };
 
